@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b9b8b837cdc880546b306cc8e58c65b8
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Sabersong
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 698dc202b0b0f434f837fcdb8fc84d60, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
