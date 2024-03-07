@@ -2814,7 +2814,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Invite to Lobby
+  m_text: Host
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1c8b0a8fc955dad4196fa7fe45e5bc30, type: 2}
   m_sharedMaterial: {fileID: -3130049401568382332, guid: 1c8b0a8fc955dad4196fa7fe45e5bc30, type: 2}
