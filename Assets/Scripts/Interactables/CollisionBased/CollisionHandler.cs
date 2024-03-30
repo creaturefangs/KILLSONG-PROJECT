@@ -19,6 +19,13 @@ public class CollisionHandler : MonoBehaviour
     public GameObject noteTxt;
     public GameObject notePanel;
 
+    // audio feedback
+    public AudioClip healthpickupSFX;
+    public AudioClip doorlockSFX;
+    public AudioClip noteSFX;
+    public AudioSource audioSource;
+    private float volume = 1.0f;
+
     // Health component of the player object
     private CPlayerHealth playerHealth;
 
@@ -57,6 +64,7 @@ public class CollisionHandler : MonoBehaviour
             // Disable the damage box collider
             other.gameObject.SetActive(false);
             Debug.Log("Collision with damage box");
+            //audio feedback is handled in player health script 
         }
         else if (other.CompareTag("DamageArea"))
         {
@@ -71,6 +79,9 @@ public class CollisionHandler : MonoBehaviour
             // Disable the health pickup collider
             other.gameObject.SetActive(false);
             Debug.Log("Collision with health pickup");
+            // audio feedback
+            audioSource.PlayOneShot(healthpickupSFX, volume);
+
         }
         else if (other.CompareTag("DoorLock"))
         {
@@ -78,11 +89,16 @@ public class CollisionHandler : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             Debug.Log("entered doorlock");
+            //audio feedback
+            audioSource.PlayOneShot(doorlockSFX, volume);
         }
         else if (other.CompareTag("Notes"))
         {
             noteTxt.SetActive(true);
             Debug.Log("note collision");
+
+            // audio feedback
+            audioSource.PlayOneShot(noteSFX, volume);
 
             if (Input.GetKeyDown(KeyCode.E))
             {

@@ -8,6 +8,11 @@ public class CPlayerHealth : MonoBehaviour
     // Respawn Screen
     public GameObject playerDeath;
 
+    // audio feedback for taking damage 
+    public AudioClip takeDamageSFX;
+    public AudioSource audioSource;
+    private float volume = 1.0f;
+
     // Current health value
     public int currentHealth = 100;
 
@@ -21,6 +26,7 @@ public class CPlayerHealth : MonoBehaviour
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
+        audioSource.PlayOneShot(takeDamageSFX, volume);
 
         // Check if health has reached zero or below
         if (currentHealth <= 0)
