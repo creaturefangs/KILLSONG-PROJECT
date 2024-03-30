@@ -12,7 +12,12 @@ public class CollisionHandler : MonoBehaviour
     public float damagePerSecond = 5f;
 
     // Reference to the player object
+    // Reference to the ui elements
     public GameObject player;
+
+    public GameObject doorlockPanel;
+    public GameObject noteTxt;
+    public GameObject notePanel;
 
     // Health component of the player object
     private CPlayerHealth playerHealth;
@@ -53,6 +58,12 @@ public class CollisionHandler : MonoBehaviour
             other.gameObject.SetActive(false);
             Debug.Log("Collision with damage box");
         }
+        else if (other.CompareTag("DamageArea"))
+        {
+            // Set flag to indicate that the player is in a damage area
+            isInDamageArea = true;
+            Debug.Log("Entered damage area");
+        }
         else if (other.CompareTag("HealthPickup"))
         {
             // Heal the player
@@ -61,12 +72,26 @@ public class CollisionHandler : MonoBehaviour
             other.gameObject.SetActive(false);
             Debug.Log("Collision with health pickup");
         }
-        else if (other.CompareTag("DamageArea"))
+        else if (other.CompareTag("DoorLock"))
         {
-            // Set flag to indicate that the player is in a damage area
-            isInDamageArea = true;
-            Debug.Log("Entered damage area");
+            doorlockPanel.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Debug.Log("entered doorlock");
         }
+        else if (other.CompareTag("Notes"))
+        {
+            noteTxt.SetActive(true);
+            Debug.Log("note collision");
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log(" e key is pressed");
+                noteTxt.SetActive(false);
+                notePanel.SetActive(true);
+            }
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -76,6 +101,17 @@ public class CollisionHandler : MonoBehaviour
             // Reset flag when the player exits the damage area
             isInDamageArea = false;
             Debug.Log("Exited damage area");
+        }
+        else if (other.CompareTag("DoorLock"))
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            doorlockPanel.SetActive(false);
+            Debug.Log("Exited doorlock");
+        }
+        else if (other.CompareTag("Notes"))
+        {
+            noteTxt.SetActive(false);
         }
     }
 

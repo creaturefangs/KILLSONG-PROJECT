@@ -7,6 +7,8 @@ TagManager:
   - DamageBox
   - HealthPickup
   - DamageArea
+  - DoorLock
+  - Notes
   layers:
   - Default
   - TransparentFX
