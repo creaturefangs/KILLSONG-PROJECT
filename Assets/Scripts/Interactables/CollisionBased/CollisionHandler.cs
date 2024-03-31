@@ -23,17 +23,27 @@ public class CollisionHandler : MonoBehaviour
     public AudioClip healthpickupSFX;
     public AudioClip doorlockSFX;
     public AudioClip noteSFX;
+    public AudioClip grenadeSFX;
     public AudioSource audioSource;
     private float volume = 1.0f;
 
     // Health component of the player object
     private CPlayerHealth playerHealth;
 
+    // speed component of the player object
+    private CPlayerMovement playerMovement;
+
     // Flag to track if the player is in a damage area
     private bool isInDamageArea = false;
 
     // Delay between each damage application for damage over time
     private float damageInterval = 3f; // Apply damage every 3 second
+
+    // Animation component for grenade explosion
+    public Animation grenadeAnimation;
+
+  
+
 
     private void Start()
     {
@@ -107,6 +117,20 @@ public class CollisionHandler : MonoBehaviour
                 notePanel.SetActive(true);
             }
         }
+        else if (other.CompareTag("Grenade"))
+        {
+            // Play grenade explosion animation and sound after 5 seconds
+            Invoke("PlayExplosion", 5f);
+            // Disable the grenade collider
+            other.gameObject.SetActive(false);
+            Debug.Log("Collision with grenade");
+        }
+        else if (other.CompareTag("SlowingObject"))
+        {
+            // Reduce player's movement speed
+            playerMovement.speed = 1f;
+            Debug.Log("Collision with slowing object");
+        }
 
     }
 
@@ -128,6 +152,12 @@ public class CollisionHandler : MonoBehaviour
         else if (other.CompareTag("Notes"))
         {
             noteTxt.SetActive(false);
+        }
+        else if (other.CompareTag("SlowingObject"))
+        {
+            // Reduce player's movement speed
+            playerMovement.speed = 5f;
+            Debug.Log("Exit collision with slowing object");
         }
     }
 
@@ -161,6 +191,23 @@ public class CollisionHandler : MonoBehaviour
             damageInterval = Time.time + 3f / damagePerSecond;
 
             Debug.Log("Damage over time: " + damageThisFrame);
+        }
+    }
+
+    // Play grenade explosion animation and sound
+    private void PlayExplosion()
+    {
+        // Check if the grenade animation and explosion sound are assigned
+        if (grenadeAnimation != null && grenadeSFX != null)
+        {
+            // Play grenade explosion animation
+            grenadeAnimation.Play();
+
+            audioSource.PlayOneShot(grenadeSFX, volume);
+        }
+        else
+        {
+            Debug.LogWarning("Grenade animation or explosion sound not assigned.");
         }
     }
 }
