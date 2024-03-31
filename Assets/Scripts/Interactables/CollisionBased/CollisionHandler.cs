@@ -42,7 +42,12 @@ public class CollisionHandler : MonoBehaviour
     // Animation component for grenade explosion
     public Animation grenadeAnimation;
 
-  
+    // UI element for displaying health pickup message
+    public GameObject healthPickupUI;
+
+    // Duration for which health pickup UI is displayed
+    public float healthPickupUIDuration = 3f;
+
 
 
     private void Start()
@@ -92,6 +97,8 @@ public class CollisionHandler : MonoBehaviour
             // audio feedback
             audioSource.PlayOneShot(healthpickupSFX, volume);
 
+            // Display health pickup UI element
+            StartCoroutine(DisplayHealthPickupUI());
         }
         else if (other.CompareTag("DoorLock"))
         {
@@ -125,7 +132,7 @@ public class CollisionHandler : MonoBehaviour
             other.gameObject.SetActive(false);
             Debug.Log("Collision with grenade");
         }
-        else if (other.CompareTag("SlowingObject"))
+        else if (other.CompareTag("SlowSurface"))
         {
             // Reduce player's movement speed
             playerMovement.speed = 1f;
@@ -153,7 +160,7 @@ public class CollisionHandler : MonoBehaviour
         {
             noteTxt.SetActive(false);
         }
-        else if (other.CompareTag("SlowingObject"))
+        else if (other.CompareTag("SlowSurface"))
         {
             // Reduce player's movement speed
             playerMovement.speed = 5f;
@@ -209,5 +216,18 @@ public class CollisionHandler : MonoBehaviour
         {
             Debug.LogWarning("Grenade animation or explosion sound not assigned.");
         }
+    }
+
+    // Coroutine to display health pickup UI element for a certain duration
+    private IEnumerator DisplayHealthPickupUI()
+    {
+        // Enable the health pickup UI element
+        healthPickupUI.SetActive(true);
+
+        // Wait for the specified duration
+        yield return new WaitForSeconds(healthPickupUIDuration);
+
+        // Disable the health pickup UI element after the duration
+        healthPickupUI.SetActive(false);
     }
 }

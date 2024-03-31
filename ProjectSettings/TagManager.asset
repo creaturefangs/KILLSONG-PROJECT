@@ -9,6 +9,7 @@ TagManager:
   - DamageArea
   - DoorLock
   - Notes
+  - SlowSurface
   layers:
   - Default
   - TransparentFX
