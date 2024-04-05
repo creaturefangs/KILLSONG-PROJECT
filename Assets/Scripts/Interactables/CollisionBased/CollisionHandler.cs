@@ -27,6 +27,10 @@ public class CollisionHandler : MonoBehaviour
     public AudioSource audioSource;
     private float volume = 1.0f;
 
+    //animator controller for door 
+    public Animator doorController;
+    public GameObject door;  
+     
     // Health component of the player object
     private CPlayerHealth playerHealth;
 
@@ -54,6 +58,9 @@ public class CollisionHandler : MonoBehaviour
     {
         // Attempt to get the Health component attached to the player object
         playerHealth = player.GetComponent<CPlayerHealth>();
+        //call the animator of the door 
+        var doorController = door.GetComponent<Animator>();
+        doorController.SetBool("DoorOpen", false);
 
         if (playerHealth == null)
         {
@@ -137,6 +144,12 @@ public class CollisionHandler : MonoBehaviour
             // Reduce player's movement speed
             playerMovement.speed = 1f;
             Debug.Log("Collision with slowing object");
+        }
+        else if (other.CompareTag("DoorTouch"))
+        {
+            // open the door via animation
+            doorController.SetBool("DoorOpen", true);
+            Debug.Log("Collision with door");
         }
 
     }

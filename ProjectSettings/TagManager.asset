@@ -10,6 +10,9 @@ TagManager:
   - DoorLock
   - Notes
   - SlowSurface
+  - DoorTouch
+  - Grenade
+  - VentGrate
   layers:
   - Default
   - TransparentFX
