@@ -63,6 +63,7 @@ public class CollisionHandler : MonoBehaviour
     // Amount to increase DNA count
     public int dnaCountIncrease = 5;
     private int totalDNA = 0;
+    public AudioClip dnaSFX;
 
 
     private void Start()
@@ -172,6 +173,7 @@ public class CollisionHandler : MonoBehaviour
             StartCoroutine(DisplayDNAPickupUI());
             // Disable the DNA pickup collider
             other.gameObject.SetActive(false);
+            audioSource.PlayOneShot(dnaSFX, volume);
             Debug.Log("Collision with DNA");
         }
 

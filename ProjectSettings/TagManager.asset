@@ -14,6 +14,7 @@ TagManager:
   - Grenade
   - VentGrate
   - DNA
+  - TrackerBot
   layers:
   - Default
   - TransparentFX
