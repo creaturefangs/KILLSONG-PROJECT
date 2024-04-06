@@ -25,6 +25,7 @@ public class CollisionHandler : MonoBehaviour
     public AudioClip doorlockSFX;
     public AudioClip noteSFX;
     public AudioClip grenadeSFX;
+    public AudioClip dnaSFX;
     public AudioSource audioSource;
     private float volume = 1.0f;
 
@@ -63,7 +64,7 @@ public class CollisionHandler : MonoBehaviour
     // Amount to increase DNA count
     public int dnaCountIncrease = 5;
     private int totalDNA = 0;
-    public AudioClip dnaSFX;
+    
 
 
     private void Start()

@@ -10,8 +10,10 @@ public class CPlayerHealth : MonoBehaviour
 
     // audio feedback for taking damage 
     public AudioClip takeDamageSFX;
+    public AudioClip deathSFX;
     public AudioSource audioSource;
     private float volume = 1.0f;
+    private float volumeDeath = 0.2f;
 
     // Current health value
     public int currentHealth = 100;
@@ -49,6 +51,9 @@ public class CPlayerHealth : MonoBehaviour
     {
         // Trigger the death event
         OnDeath?.Invoke();
+
+        //Play death sound
+        audioSource.PlayOneShot(deathSFX, volumeDeath);
 
         // Optionally, you can disable the gameObject, play death animations, etc.
         gameObject.SetActive(false);

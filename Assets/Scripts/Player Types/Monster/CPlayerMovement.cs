@@ -5,6 +5,7 @@ using UnityEngine;
 public class CPlayerMovement : MonoBehaviour
 {
     public float speed = 5f; // Movement speed
+    public float sprintSpeed = 10f; // Sprinting speed
     public float jumpForce = 5f; // Jump force
     public float mouseSensitivity = 2f; // Mouse sensitivity
 
@@ -12,6 +13,7 @@ public class CPlayerMovement : MonoBehaviour
     private Camera playerCamera;
     private Vector3 movement;
     private float mouseX, mouseY;
+    private bool isSprinting = false;
 
     void Start()
     {
@@ -26,10 +28,21 @@ public class CPlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
+        // Check if sprint key is pressed
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            isSprinting = true;
+        }
+        else
+        {
+            isSprinting = false;
+        }
+
         // Check if there's any movement input
         if (horizontalInput != 0 || verticalInput != 0)
         {
-            movement = new Vector3(horizontalInput, 0f, verticalInput).normalized * speed;
+            float currentSpeed = isSprinting ? sprintSpeed : speed;
+            movement = new Vector3(horizontalInput, 0f, verticalInput).normalized * currentSpeed;
         }
         else
         {
@@ -83,3 +96,4 @@ public class CPlayerMovement : MonoBehaviour
         return false;
     }
 }
+
