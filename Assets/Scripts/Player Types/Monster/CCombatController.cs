@@ -8,6 +8,8 @@ public class CCombatController : MonoBehaviour
     private bool colliderActive = false; // Flag to track if the collider is active
 
     public GameObject ventGrate;
+    public GameObject Generator;
+    public GameObject trackerBot;
 
     void Update()
     {
@@ -46,6 +48,20 @@ public class CCombatController : MonoBehaviour
                 // For example:
                 //collider.GetComponent<Enemy>().TakeDamage(10); // Assuming there's a method in the Enemy script to take damage
                 ventGrate.SetActive(false);
+            }
+            else if (collider.CompareTag("Generator"))
+            {
+                // Trigger event for hitting an enemy
+                // For example:
+                //collider.GetComponent<Enemy>().TakeDamage(10); // Assuming there's a method in the Enemy script to take damage
+                Generator.SetActive(false);
+            }
+            else if (collider.CompareTag("TrackerBot"))
+            {
+                // Trigger event for hitting an enemy
+                // For example:
+                //collider.GetComponent<Enemy>().TakeDamage(10); // Assuming there's a method in the Enemy script to take damage
+                trackerBot.SetActive(false);
             }
         }
     }
