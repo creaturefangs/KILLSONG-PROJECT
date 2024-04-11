@@ -15,6 +15,7 @@ TagManager:
   - VentGrate
   - DNA
   - TrackerBot
+  - Enemy
   layers:
   - Default
   - TransparentFX
