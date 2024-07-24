@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!21 &-7833499771837382940
+--- !u!21 &-6905591064875708205
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NightmarePills-BV2w Atlas Material
+  m_Name: CC Wild Words Roman Atlas Material
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -36,7 +36,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: -110833248999171196}
+        m_Texture: {fileID: -875736615621235401}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineTex:
@@ -108,13 +108,13 @@ Material:
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_BuildTextureStacks: []
---- !u!28 &-110833248999171196
+--- !u!28 &-875736615621235401
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NightmarePills-BV2w Atlas
+  m_Name: CC Wild Words Roman Atlas
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -166,42 +166,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: NightmarePills-BV2w SDF 1
+  m_Name: CC Wild Words Roman SDF
   m_EditorClassIdentifier: 
   hashCode: 0
-  material: {fileID: -7833499771837382940}
+  material: {fileID: -6905591064875708205}
   materialHashCode: 0
   m_Version: 1.1.0
-  m_SourceFontFileGUID: 9d0450f3626ab9543b6cf3e1c80ab5b6
-  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 9d0450f3626ab9543b6cf3e1c80ab5b6, type: 3}
-  m_SourceFontFile: {fileID: 12800000, guid: 9d0450f3626ab9543b6cf3e1c80ab5b6, type: 3}
+  m_SourceFontFileGUID: 000b574eb46bb754e81cdb968d255aad
+  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 000b574eb46bb754e81cdb968d255aad, type: 3}
+  m_SourceFontFile: {fileID: 12800000, guid: 000b574eb46bb754e81cdb968d255aad, type: 3}
   m_AtlasPopulationMode: 1
   m_FaceInfo:
     m_FaceIndex: 0
-    m_FamilyName: NIGHTMARE PILLS
-    m_StyleName: Regular
+    m_FamilyName: CC Wild Words
+    m_StyleName: Roman
     m_PointSize: 90
     m_Scale: 1
-    m_UnitsPerEM: 1000
-    m_LineHeight: 108.00001
-    m_AscentLine: 68.490005
-    m_CapLine: 61
-    m_MeanLine: 38
+    m_UnitsPerEM: 4096
+    m_LineHeight: 76.94824
+    m_AscentLine: 71.74072
+    m_CapLine: 73
+    m_MeanLine: 71
     m_Baseline: 0
-    m_DescentLine: -21.51
-    m_SuperscriptOffset: 68.490005
+    m_DescentLine: -5.2075195
+    m_SuperscriptOffset: 71.74072
     m_SuperscriptSize: 0.5
-    m_SubscriptOffset: -21.51
+    m_SubscriptOffset: -5.2075195
     m_SubscriptSize: 0.5
-    m_UnderlineOffset: -9
-    m_UnderlineThickness: 4.5
-    m_StrikethroughOffset: 15.2
-    m_StrikethroughThickness: 4.5
-    m_TabWidth: 32
+    m_UnderlineOffset: -3.1420898
+    m_UnderlineThickness: 0.43945312
+    m_StrikethroughOffset: 28.4
+    m_StrikethroughThickness: 0.43945312
+    m_TabWidth: 38
   m_GlyphTable: []
   m_CharacterTable: []
   m_AtlasTextures:
-  - {fileID: -110833248999171196}
+  - {fileID: -875736615621235401}
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
   m_ClearDynamicDataOnBuild: 0
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_FallbackFontAssetTable: []
   m_CreationSettings:
     sourceFontFileName: 
-    sourceFontFileGUID: 9d0450f3626ab9543b6cf3e1c80ab5b6
+    sourceFontFileGUID: 000b574eb46bb754e81cdb968d255aad
     pointSizeSamplingMode: 0
     pointSize: 90
     padding: 9
