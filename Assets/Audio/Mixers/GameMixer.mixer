@@ -68,6 +68,7 @@ AudioMixerController:
     - e81b071c82345c24faa4bb9165bf09a0
     - 896af82e8dbe09e4392ee93ee1b6a927
     - 9f80c2bc763d39d448bded5f9c260691
+    - 8f377432e5d58bd4fad002fced36a5c9
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -83,6 +84,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: -3560109313512071917}
   - {fileID: 5682402805991489768}
+  - {fileID: 5914712116812976883}
   m_Volume: 8e93b96dab1a1ba4e84161434fc96c6b
   m_Pitch: 939a5b7b90afb6c4d96ad015a4ae4e75
   m_Send: 00000000000000000000000000000000
@@ -117,13 +119,27 @@ AudioMixerSnapshotController:
   m_SnapshotID: 3e692177b7b534a468f18b3209d9bfd5
   m_FloatValues: {}
   m_TransitionOverrides: {}
+--- !u!244 &2967900207109534163
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: d74be470c46735945a12bb104a685696
+  m_EffectName: Attenuation
+  m_MixLevel: ab905fffa86fa0247b012820f6821324
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &5682402805991489768
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BGM
+  m_Name: BGMUSIC
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 896af82e8dbe09e4392ee93ee1b6a927
   m_Children: []
@@ -132,6 +148,25 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: -6512895980000767088}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &5914712116812976883
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: VFX
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 8f377432e5d58bd4fad002fced36a5c9
+  m_Children: []
+  m_Volume: d9d7fe3921147f84cbc866f8426a0631
+  m_Pitch: 928084deaa84c354fbeeda1362ebedc2
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 2967900207109534163}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
