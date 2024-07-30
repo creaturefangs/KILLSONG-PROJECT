@@ -2874,7 +2874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &819226682
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4258,6 +4258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 388cc6206f2c9a249bd9d984531fe9cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: SINGLEPLAYERMENU
+  loadSceneButton: {fileID: 1604662792}
 --- !u!1 &1060230191
 GameObject:
   m_ObjectHideFlags: 0
@@ -5092,7 +5094,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1228719418
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5281,7 +5283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1273289917
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6300,7 +6302,7 @@ GameObject:
   - component: {fileID: 1604662793}
   - component: {fileID: 1604662792}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: LoadSceneButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6380,6 +6382,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1040689992}
+        m_TargetAssemblyTypeName: ButtonNav, Assembly-CSharp
+        m_MethodName: LoadSceneWithDelay
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SINGLEPLAYERMAINMENU
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1604662793
@@ -8145,7 +8159,7 @@ GameObject:
   - component: {fileID: 2135685673}
   - component: {fileID: 2135685675}
   m_Layer: 5
-  m_Name: HostPanel
+  m_Name: SinglePlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

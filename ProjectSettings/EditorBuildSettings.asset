@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MULTIPLAYER/FirstPersonTest.unity
     guid: 462d3e4489e2efe479cb885f285e1506
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 25df6d38728984f4480f50f3038b1b7c
+  - enabled: 1
+    path: Assets/Scenes/SINGLEPLAYER/SINGLEPLAYERMENU.unity
+    guid: 0c3b2da4c59fed74bb205a6620da8f3b
+  - enabled: 1
+    path: Assets/Scenes/SINGLEPLAYER/ThirdPersonTest.unity
+    guid: 5cb163fe8cab2524b9d2a7023e024de7
   m_configObjects: {}
