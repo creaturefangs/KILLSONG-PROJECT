@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 6504689387686301298}
   - component: {fileID: 194447630815429155}
   m_Layer: 0
-  m_Name: T_Virus_obj
+  m_Name: DNA
   m_TagString: DNA
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
