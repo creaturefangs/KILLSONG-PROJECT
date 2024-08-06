@@ -9162,6 +9162,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nightVisionVolume: {fileID: 4535347110392797364}
   mainPPVolume: {fileID: 0}
+  audioSource: {fileID: 0}
+  nightVisSFX: {fileID: 0}
 --- !u!114 &5691308469230525582
 MonoBehaviour:
   m_ObjectHideFlags: 0
