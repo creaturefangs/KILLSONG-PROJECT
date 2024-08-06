@@ -8,7 +8,8 @@ public class CNightVisController : MonoBehaviour
     public PostProcessVolume nightVisionVolume; // Reference to the Post-Process Volume
     public GameObject mainPPVolume; 
     private bool isNightVisionActive = false;
-    
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip nightVisSFX;
     void Start()
     {
         // Ensure the night vision effect is initially off
@@ -23,6 +24,7 @@ public class CNightVisController : MonoBehaviour
             isNightVisionActive = !isNightVisionActive;
             nightVisionVolume.enabled = isNightVisionActive;
             mainPPVolume.SetActive(false);
+            audioSource.PlayOneShot(nightVisSFX);
         }
     }
 }
