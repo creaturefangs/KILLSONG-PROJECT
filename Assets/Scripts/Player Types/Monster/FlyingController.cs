@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FlyingController : MonoBehaviour
+
 {
     // Serialized fields for easy adjustment in the Inspector
     [SerializeField] private float forwardFlightSpeed = 10f;
     [SerializeField] private float boostSpeed = 20f;
+    [SerializeField] private float turnSpeed = 120f;
     [SerializeField] private float tiltAngle = 30f;
     [SerializeField] private float tiltSpeed = 5f;
     [SerializeField] private float takeoffDelay = 0.3f;
     [SerializeField] private float mouseSensitivity = 2f;
     [SerializeField] private float zoomSpeed = 2f;
+    [SerializeField] private float verticalMovementSpeed = 15f;
     [SerializeField] private Transform cameraTransform;
 
     // Private fields for tracking flight status and input timing
@@ -65,7 +68,6 @@ public class FlyingController : MonoBehaviour
         {
             MoveOnGround();
         }
-
         Tilt();
     }
 
@@ -74,8 +76,19 @@ public class FlyingController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(horizontal, 0f, vertical) * forwardFlightSpeed * Time.deltaTime;
-        rb.MovePosition(transform.position + movement);
+        Vector3 movement = new Vector3(horizontal, 0f, vertical).normalized * forwardFlightSpeed * Time.deltaTime;
+        Vector3 direction = cameraTransform.forward * vertical + cameraTransform.right * horizontal;
+        direction.y = 0f; // Ignore upward movement
+        direction.Normalize();
+
+        rb.MovePosition(transform.position + direction * forwardFlightSpeed * Time.deltaTime);
+
+        // Rotate the player to face the direction of movement
+        if (direction != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            rb.MoveRotation(Quaternion.Slerp(rb.rotation, targetRotation, Time.deltaTime * tiltSpeed));
+        }
     }
 
     private void Fly()
@@ -87,24 +100,24 @@ public class FlyingController : MonoBehaviour
         float speed = Input.GetKey(KeyCode.LeftShift) ? boostSpeed : forwardFlightSpeed;
         Vector3 forwardMovement = transform.forward * speed * Time.deltaTime;
 
-        // Adjust left/right movement based on tilt
-        Vector3 horizontalMovement = transform.right * horizontal * speed * Time.deltaTime;
+        // Adjust left/right movement based on turning
+        if (horizontal != 0)
+        {
+            transform.Rotate(0f, horizontal * turnSpeed * Time.deltaTime, 0f);
+        }
 
-        rb.MovePosition(transform.position + forwardMovement + horizontalMovement);
-
+        // Adjust upward/downward movement
+        Vector3 verticalMovement = Vector3.zero;
         if (vertical > 0)
         {
-            rb.velocity = new Vector3(rb.velocity.x, speed, rb.velocity.z);
+            verticalMovement = transform.up * verticalMovementSpeed * Time.deltaTime;
         }
-    }
+        else if (vertical < 0)
+        {
+            verticalMovement = transform.up * verticalMovementSpeed * vertical * Time.deltaTime;
+        }
 
-    private void Tilt()
-    {
-        float tiltInput = Input.GetAxis("Horizontal");
-        float targetTilt = tiltInput * tiltAngle;
-
-        Quaternion targetRotation = Quaternion.Euler(0f, transform.eulerAngles.y, -targetTilt);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, tiltSpeed * Time.deltaTime);
+        rb.MovePosition(transform.position + forwardMovement + verticalMovement);
     }
 
     private void HandleCamera()
@@ -125,5 +138,18 @@ public class FlyingController : MonoBehaviour
 
         cameraTransform.localPosition = new Vector3(0f, 0f, -currentZoom);
     }
+
+
+
+    private void Tilt()
+    {
+        float tiltInput = Input.GetAxis("Horizontal");
+        float targetTilt = tiltInput * tiltAngle;
+
+        Quaternion targetRotation = Quaternion.Euler(0f, transform.eulerAngles.y, -targetTilt);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, tiltSpeed * Time.deltaTime);
+    }
+
+
 }
 
