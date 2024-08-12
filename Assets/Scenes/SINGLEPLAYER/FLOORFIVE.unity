@@ -38661,39 +38661,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.88721776
   m_Center: {x: 0, y: 0, z: 0.38721776}
---- !u!114 &1804917360455353935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5262171276468471950}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d59cf99f275886444aad96b0614b10cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageAmount: 10
-  damagePerSecond: 5
-  player: {fileID: 5262171276468471950}
-  doorlockPanel: {fileID: 0}
-  noteTxt: {fileID: 0}
-  notePanel: {fileID: 0}
-  healthpickupSFX: {fileID: 8300000, guid: a786e9afffe83b54db65795a3403cb52, type: 3}
-  doorlockSFX: {fileID: 0}
-  noteSFX: {fileID: 8300000, guid: fffb6de2a238a3741ab3307b91fa9fa3, type: 3}
-  grenadeSFX: {fileID: 8300000, guid: d1bef9d95b59ff840adf74176e374ca4, type: 3}
-  dnaSFX: {fileID: 8300000, guid: bda45bafa671d79419c2fd566de991f1, type: 3}
-  audioSource: {fileID: 3118946627505802225}
-  doorController: {fileID: 0}
-  door: {fileID: 0}
-  grenadeAnimation: {fileID: 0}
-  healthPickupUI: {fileID: 563321705706388686}
-  healthPickupUIDuration: 3
-  dnaCountText: {fileID: 0}
-  dnaPickupUI: {fileID: 0}
-  dnaPickupUIDuration: 3
-  dnaCountIncrease: 5
 --- !u!222 &1812820099580670756
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40224,7 +40191,6 @@ GameObject:
   - component: {fileID: 7692136441426233991}
   - component: {fileID: 6421978323547729991}
   - component: {fileID: 7614757241409189157}
-  - component: {fileID: 1804917360455353935}
   - component: {fileID: 6603596103173607782}
   - component: {fileID: 7370262641712683528}
   - component: {fileID: 3118946627505802225}
@@ -41577,16 +41543,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8856b69277449e941aa162315d058b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardFlightSpeed: 60
-  boostSpeed: 40
-  turnSpeed: 90
+  forwardFlightSpeed: 40
+  boostSpeed: 60
   tiltAngle: 30
   tiltSpeed: 25
   takeoffDelay: 0.3
   mouseSensitivity: 0.5
   zoomSpeed: 2
-  verticalMovementSpeed: 5
   cameraTransform: {fileID: 8214615583633756988}
+  verticalMovementSpeed: 50
+  descendSpeed: 3
+  smoothFlightTransition: 2
+  maxVerticalSpeed: 5
 --- !u!224 &7749010118887345012
 RectTransform:
   m_ObjectHideFlags: 0
