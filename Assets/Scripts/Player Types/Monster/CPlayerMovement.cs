@@ -5,15 +5,20 @@ using UnityEngine;
 public class CPlayerMovement : MonoBehaviour
 {
     public float speed = 5f; // Movement speed
-    public float sprintSpeed = 10f; // Sprinting speed
-    public float jumpForce = 5f; // Jump force
-    public float mouseSensitivity = 2f; // Mouse sensitivity
+    [SerializeField] private float sprintSpeed = 10f; // Sprinting speed
+    [SerializeField] private float jumpForce = 5f; // Jump force
+    [SerializeField] private float mouseSensitivity = 2f; // Mouse sensitivity
+    [SerializeField] private float zoomSensitivity = 15f; // Zoom sensitivity
+    [SerializeField] private float minZoom = 20f; // Minimum camera zoom (FOV)
+    [SerializeField] private float maxZoom = 60f; // Maximum camera zoom (FOV)
+    [SerializeField] private int maxJumps = 2; // Maximum number of jumps (e.g., 2 for double jump)
 
     private Rigidbody rb;
     private Camera playerCamera;
     private Vector3 movement;
     private float mouseX, mouseY;
     private bool isSprinting = false;
+    private int jumpCount = 0;
 
     void Start()
     {
@@ -29,14 +34,7 @@ public class CPlayerMovement : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
         // Check if sprint key is pressed
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            isSprinting = true;
-        }
-        else
-        {
-            isSprinting = false;
-        }
+        isSprinting = Input.GetKey(KeyCode.LeftShift);
 
         // Check if there's any movement input
         if (horizontalInput != 0 || verticalInput != 0)
@@ -63,6 +61,13 @@ public class CPlayerMovement : MonoBehaviour
         {
             Jump();
         }
+
+        // Mouse zoom input
+        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+        if (scrollInput != 0f)
+        {
+            ZoomCamera(scrollInput);
+        }
     }
 
     void FixedUpdate()
@@ -78,9 +83,10 @@ public class CPlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        if (IsGrounded())
+        if (IsGrounded() || jumpCount < maxJumps)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            jumpCount++;
         }
     }
 
@@ -91,9 +97,18 @@ public class CPlayerMovement : MonoBehaviour
         float distanceToGround = 0.1f;
         if (Physics.Raycast(transform.position, -Vector3.up, out hit, distanceToGround))
         {
+            jumpCount = 0; // Reset jump count when grounded
             return true;
         }
         return false;
     }
+
+    void ZoomCamera(float scrollInput)
+    {
+        float newFOV = playerCamera.fieldOfView - scrollInput * zoomSensitivity;
+        playerCamera.fieldOfView = Mathf.Clamp(newFOV, minZoom, maxZoom);
+    }
 }
+
+
 
