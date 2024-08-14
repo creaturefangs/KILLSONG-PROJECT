@@ -5,6 +5,7 @@ using UnityEngine;
 public class CPlayerMovement : MonoBehaviour
 {
     public float speed = 5f; // Movement speed
+   
     [SerializeField] private float sprintSpeed = 10f; // Sprinting speed
     [SerializeField] private float jumpForce = 5f; // Jump force
     [SerializeField] private float mouseSensitivity = 2f; // Mouse sensitivity
@@ -12,6 +13,7 @@ public class CPlayerMovement : MonoBehaviour
     [SerializeField] private float minZoom = 20f; // Minimum camera zoom (FOV)
     [SerializeField] private float maxZoom = 60f; // Maximum camera zoom (FOV)
     [SerializeField] private int maxJumps = 2; // Maximum number of jumps (e.g., 2 for double jump)
+    [SerializeField] private LayerMask groundLayer; // Layer mask to identify ground
 
     private Rigidbody rb;
     private Camera playerCamera;
@@ -19,12 +21,15 @@ public class CPlayerMovement : MonoBehaviour
     private float mouseX, mouseY;
     private bool isSprinting = false;
     private int jumpCount = 0;
+    private float distanceToGround;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         playerCamera = GetComponentInChildren<Camera>(); // Assuming the camera is a child of the player
         Cursor.lockState = CursorLockMode.Locked; // Lock cursor to center of screen
+
+        distanceToGround = GetComponent<Collider>().bounds.extents.y; // Calculate distance from center to the bottom of the collider
     }
 
     void Update()
@@ -47,14 +52,14 @@ public class CPlayerMovement : MonoBehaviour
             movement = Vector3.zero; // No movement input, reset movement vector
         }
 
-        // Mouse look input
+        // Mouse look input for camera rotation around the player
         mouseX += Input.GetAxis("Mouse X") * mouseSensitivity;
         mouseY -= Input.GetAxis("Mouse Y") * mouseSensitivity;
-        mouseY = Mathf.Clamp(mouseY, -90f, 90f); // Limit vertical rotation
+        mouseY = Mathf.Clamp(mouseY, -30f, 60f); // Limit vertical rotation to prevent the camera from flipping
 
-        // Rotate the player horizontally, and the camera vertically
-        transform.localRotation = Quaternion.Euler(0f, mouseX, 0f);
+        // Rotate the camera around the player
         playerCamera.transform.localRotation = Quaternion.Euler(mouseY, 0f, 0f);
+        transform.rotation = Quaternion.Euler(0f, mouseX, 0f);
 
         // Jump input
         if (Input.GetKeyDown(KeyCode.Space))
@@ -92,15 +97,8 @@ public class CPlayerMovement : MonoBehaviour
 
     bool IsGrounded()
     {
-        // Raycast to check if the player is grounded
-        RaycastHit hit;
-        float distanceToGround = 0.1f;
-        if (Physics.Raycast(transform.position, -Vector3.up, out hit, distanceToGround))
-        {
-            jumpCount = 0; // Reset jump count when grounded
-            return true;
-        }
-        return false;
+        // Check if the player is on the ground using a sphere cast
+        return Physics.CheckSphere(transform.position + Vector3.down * distanceToGround, 0.3f, groundLayer);
     }
 
     void ZoomCamera(float scrollInput)
