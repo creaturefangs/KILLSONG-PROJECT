@@ -4,14 +4,15 @@ Shader "Hidden/Custom/Pixel Effect"
     {
         _SampleAmount("Sample Amount", int) = 100
         _DitherSpread("Dither Spread", float) = .1
-        _QuantizationAmounts("Quantization Amounts", int) = 255
+        _QuantizationAmounts("Quantization Amounts", vector) = (255, 255, 255, 255)
     }
 
     HLSLINCLUDE
         #include "Packages/com.unity.postprocessing/PostProcessing/Shaders/StdLib.hlsl"
         Texture2D _MainTex;
         SamplerState sampler_MainTex_point_clamp;
-        int _SampleAmount, _QuantizationAmounts;
+        int _SampleAmount;
+        float4 _QuantizationAmounts;
         float _DitherSpread;
 
         static const int BayerDitherPattern[2*2] = 
@@ -26,7 +27,10 @@ Shader "Hidden/Custom/Pixel Effect"
         {
             return float(BayerDitherPattern[(x % 2) + (y % 2) *2]) * ((1.0 / 4.0) - 0.5);
         }
-
+        float CalculateQuatization(float currentAmount, float desiredSamples)
+        {
+            return floor(currentAmount * (desiredSamples - 1) + 0.5) / (desiredSamples - 1);
+        }
         float4 frag (VaryingsDefault i) : SV_Target
         {
             float2 pixelRatio = float2(_SampleAmount, _SampleAmount * (_ScreenParams.y / _ScreenParams.x));
@@ -37,7 +41,7 @@ Shader "Hidden/Custom/Pixel Effect"
             float2 BayerDitherCoords = newTexUVs * pixelRatio;
             // sample the texture
             float4 col = _MainTex.Sample(sampler_MainTex_point_clamp, newTexUVs) + ( _DitherSpread * GetBayer2(BayerDitherCoords.x, BayerDitherCoords.y));
-            col = floor(col * (_QuantizationAmounts - 1) + 0.5) / (_QuantizationAmounts - 1);
+            col = float4(CalculateQuatization(col.x, _QuantizationAmounts.x), CalculateQuatization(col.y, _QuantizationAmounts.y), CalculateQuatization(col.z, _QuantizationAmounts.z), CalculateQuatization(col.w, _QuantizationAmounts.w));
             return col;
         }
 

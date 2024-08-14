@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2521956852276644269
+--- !u!114 &-8119372648714565798
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18,13 +18,35 @@ MonoBehaviour:
     value: 1
   SampleAmount:
     overrideState: 1
-    value: 128
+    value: 256
   DitherAmount:
     overrideState: 1
-    value: 0.05
-  QuantizationAmount:
+    value: 0.02
+  ChannelQuantizationAmounts:
     overrideState: 1
-    value: 16
+    value: {x: 16, y: 20, z: 16, w: 255}
+--- !u!114 &-6047106413801337447
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a6c64113ddbe146b441bbc8b4f3451, type: 3}
+  m_Name: Outlines
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  Threshold:
+    overrideState: 1
+    value: 216.3
+  EdgeWidth:
+    overrideState: 1
+    value: 3.05
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38,9 +60,9 @@ MonoBehaviour:
   m_Name: Post-process Volume Profile
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: 4044771614652962956}
-  - {fileID: -2521956852276644269}
---- !u!114 &4044771614652962956
+  - {fileID: 5330258364626441127}
+  - {fileID: -8119372648714565798}
+--- !u!114 &5330258364626441127
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -49,13 +71,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6ba44023d8c79646aee5bc047fd31ab, type: 3}
-  m_Name: SharpenEffect
+  m_Script: {fileID: 11500000, guid: 318d18afaa0488d4e939d86608285f6b, type: 3}
+  m_Name: NightVision
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
-  SharpenAmount:
+  ViewDistance:
     overrideState: 1
-    value: 0.05
+    value: 10
+  GrainAmount:
+    overrideState: 1
+    value: 0.34
+  NVGColorLow:
+    overrideState: 1
+    value: {r: 0.11764707, g: 0.6745098, b: 0.13725491, a: 1}
+  NVGColorHigh:
+    overrideState: 1
+    value: {r: 1, g: 1, b: 1, a: 1}
