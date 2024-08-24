@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
 {
-    [HideInInspector] public STRInteractables interactableStruct;
+    public STRInteractables interactableStruct;
    
     [Tooltip("Interaction Event.")]
     public UnityEvent onInteractionEvent;
