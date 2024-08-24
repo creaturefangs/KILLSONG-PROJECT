@@ -5,10 +5,12 @@ using UnityEngine.Events;
 
 public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
 {
+    [HideInInspector] public STRInteractables interactableStruct;
+   
     [Tooltip("Interaction Event.")]
-    public UnityEvent onInteraction;
-    [Tooltip("Should this interactable get destroyed on pickup?")]
-    public bool destroyOnPickup;
+    public UnityEvent onInteractionEvent;
+    [Tooltip("Should this interactable get destroyed on interaction?")]
+    public bool destroyOnInteraction;
     [Tooltip("Set if this object can be interacted with.")]
      public bool canInteract = false;
     [Tooltip("Tag to check for trigger events, default is Player.")]
@@ -29,12 +31,12 @@ public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
 
     public void Interact(){
         if(canInteract){
-            onInteraction?.Invoke();
+            onInteractionEvent?.Invoke();
         }
     }
 
     public void OnPickup(){
-        if(destroyOnPickup){
+        if(destroyOnInteraction){
             Destroy(gameObject);
         }
     }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerInteractableController : MonoBehaviour
 {   
     public KeyCode interactKey;
+    
+
     [SerializeField] private float interactionDelay;
     public CollisionBasedInteractableObject _currentInteractableObject;
 
