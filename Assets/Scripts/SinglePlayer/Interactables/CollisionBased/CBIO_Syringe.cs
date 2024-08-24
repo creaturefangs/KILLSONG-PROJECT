@@ -4,4 +4,5 @@ using UnityEngine;
 
 public class Syringe_Pickup : Healable, IHealthBoost
 {   
+    
 }

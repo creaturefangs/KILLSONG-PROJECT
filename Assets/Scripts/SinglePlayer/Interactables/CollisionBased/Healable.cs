@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Healable : CollisionBasedInteractableObject, IHealthBoost
 {
     private CPlayerHealth _playerHealth;
 
-    private void Awake()
-    {
+
+    void Start(){
         _playerHealth = player.GetComponent<CPlayerHealth>();
     }
     

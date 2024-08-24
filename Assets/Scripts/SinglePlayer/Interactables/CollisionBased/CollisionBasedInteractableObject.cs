@@ -5,10 +5,12 @@ using UnityEngine.Events;
 
 public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
 {
-    public STRInteractables interactableStruct;
+    public SO_CollisionBasedIO interactableData;
    
     [Tooltip("Interaction Event.")]
     public UnityEvent onInteractionEvent;
+    [Tooltip("Is this item a pickup?")]
+    public bool isPickup;
     [Tooltip("Should this interactable get destroyed on interaction?")]
     public bool destroyOnInteraction;
     [Tooltip("Set if this object can be interacted with.")]
@@ -27,11 +29,24 @@ public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
         if(!other.CompareTag(triggerObjectTagCheck)) return;
 
         canInteract = true;
+        player.GetComponent<PlayerInteractableController>().currentInteractableObject = this;
+        print(canInteract);
+    }
+
+    public void OnTriggerExit(Collider other){
+        if(!other.CompareTag(triggerObjectTagCheck)) return;
+
+        canInteract = false;
+        player.GetComponent<PlayerInteractableController>().currentInteractableObject = null;
+        print(canInteract);
     }
 
     public void Interact(){
         if(canInteract){
             onInteractionEvent?.Invoke();
+            if(isPickup){
+                OnPickup();
+            }
         }
     }
 
@@ -39,5 +54,10 @@ public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
         if(destroyOnInteraction){
             Destroy(gameObject);
         }
+    }
+
+    public void PlaySoundOnInteraction(AudioSource source, AudioClip sound)
+    {
+
     }
 }

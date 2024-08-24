@@ -107,19 +107,19 @@ public class CollisionHandler : MonoBehaviour
             isInDamageArea = true;
             Debug.Log("Entered damage area");
         }
-        else if (other.CompareTag("HealthPickup"))
-        {
-            // Heal the player
-            playerHealth.Heal(25);
-            // Disable the health pickup collider
-            other.gameObject.SetActive(false);
-            Debug.Log("Collision with health pickup");
-            // audio feedback
-            audioSource.PlayOneShot(healthpickupSFX, volume);
+        // else if (other.CompareTag("HealthPickup"))
+        // {
+        //     // Heal the player
+        //     playerHealth.Heal(25);
+        //     // Disable the health pickup collider
+        //     other.gameObject.SetActive(false);
+        //     Debug.Log("Collision with health pickup");
+        //     // audio feedback
+        //     audioSource.PlayOneShot(healthpickupSFX, volume);
 
-            // Display health pickup UI element
-            StartCoroutine(DisplayHealthPickupUI());
-        }
+        //     // Display health pickup UI element
+        //     StartCoroutine(DisplayHealthPickupUI());
+        // }
         else if (other.CompareTag("DoorLock"))
         {
             doorlockPanel.SetActive(true);

@@ -14771,14 +14771,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c16e4f121a9f6b409b0068e5e6d48a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactableStruct:
-    interactableName: Syringe
-    uiImage: {fileID: 0}
-    uiImageSize: {x: 0, y: 0}
-  onInteraction:
+  interactableData: {fileID: 11400000, guid: 9ce9d05048e0d0843a435273543e3875, type: 2}
+  onInteractionEvent:
     m_PersistentCalls:
-      m_Calls: []
-  destroyOnPickup: 1
+      m_Calls:
+      - m_Target: {fileID: 1714736906}
+        m_TargetAssemblyTypeName: Healable, Assembly-CSharp
+        m_MethodName: ImmediateHealthIncrease
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 25
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  isPickup: 1
+  destroyOnInteraction: 1
   canInteract: 0
   triggerObjectTagCheck: Player
   player: {fileID: 0}
@@ -15207,13 +15217,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7040538890475621896, guid: df99658a217d78f409544ea8e2e93efe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1800993850}
   m_SourcePrefab: {fileID: 100100000, guid: df99658a217d78f409544ea8e2e93efe, type: 3}
 --- !u!1 &1800993838 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7040538890475621896, guid: df99658a217d78f409544ea8e2e93efe, type: 3}
   m_PrefabInstance: {fileID: 1800993837}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1800993850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800993838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e904b2e5e1ba562419718fec12fcb0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactKey: 101
+  interactionDelay: 2
+  currentInteractableObject: {fileID: 0}
 --- !u!1001 &1803816024
 PrefabInstance:
   m_ObjectHideFlags: 0
