@@ -14778,6 +14778,7 @@ MonoBehaviour:
   canInteract: 0
   triggerObjectTagCheck: Player
   player: {fileID: 0}
+  totalAmountToHeal: 25
 --- !u!1 &1716865671
 GameObject:
   m_ObjectHideFlags: 0
@@ -15158,6 +15159,30 @@ PrefabInstance:
     - target: {fileID: 4759193622396128256, guid: df99658a217d78f409544ea8e2e93efe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816345096440472972, guid: df99658a217d78f409544ea8e2e93efe, type: 3}
+      propertyPath: m_AfterStackBundles.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816345096440472972, guid: df99658a217d78f409544ea8e2e93efe, type: 3}
+      propertyPath: m_AfterStackBundles.Array.data[0].assemblyQualifiedName
+      value: NightVision, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816345096440472972, guid: df99658a217d78f409544ea8e2e93efe, type: 3}
+      propertyPath: m_AfterStackBundles.Array.data[1].assemblyQualifiedName
+      value: Outlines, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816345096440472972, guid: df99658a217d78f409544ea8e2e93efe, type: 3}
+      propertyPath: m_AfterStackBundles.Array.data[2].assemblyQualifiedName
+      value: SharpenEffect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816345096440472972, guid: df99658a217d78f409544ea8e2e93efe, type: 3}
+      propertyPath: m_AfterStackBundles.Array.data[3].assemblyQualifiedName
+      value: CRT, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816345096440472972, guid: df99658a217d78f409544ea8e2e93efe, type: 3}
+      propertyPath: m_AfterStackBundles.Array.data[4].assemblyQualifiedName
+      value: PixelEffect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       objectReference: {fileID: 0}
     - target: {fileID: 7040538890475621896, guid: df99658a217d78f409544ea8e2e93efe, type: 3}
       propertyPath: m_Name

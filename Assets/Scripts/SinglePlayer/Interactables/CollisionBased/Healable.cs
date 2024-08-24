@@ -29,6 +29,8 @@ public class Healable : CollisionBasedInteractableObject, IHealthBoost
                 _playerHealth.currentHealth,
                  _playerHealth.currentHealth + amountToIncrease,
                   Time.deltaTime * totalTimeToIncrease));
+
+            currentTime = 0;
         }
         yield return null;
     }
