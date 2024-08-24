@@ -14749,8 +14749,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7778497171457036685, guid: 32f0d2e68d9def64eaad88f47aa7d773, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1714736906}
   m_SourcePrefab: {fileID: 100100000, guid: 32f0d2e68d9def64eaad88f47aa7d773, type: 3}
+--- !u!1 &1714736905 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7778497171457036685, guid: 32f0d2e68d9def64eaad88f47aa7d773, type: 3}
+  m_PrefabInstance: {fileID: 1714736904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1714736906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714736905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c16e4f121a9f6b409b0068e5e6d48a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onInteraction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1716865671
 GameObject:
   m_ObjectHideFlags: 0
@@ -15135,6 +15158,14 @@ PrefabInstance:
     - target: {fileID: 7040538890475621896, guid: df99658a217d78f409544ea8e2e93efe, type: 3}
       propertyPath: m_Name
       value: ThirdPersonController
+      objectReference: {fileID: 0}
+    - target: {fileID: 8191075162299807425, guid: df99658a217d78f409544ea8e2e93efe, type: 3}
+      propertyPath: maxZoom
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 8191075162299807425, guid: df99658a217d78f409544ea8e2e93efe, type: 3}
+      propertyPath: minZoom
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 8191075162299807425, guid: df99658a217d78f409544ea8e2e93efe, type: 3}
       propertyPath: zoomSensitivity
