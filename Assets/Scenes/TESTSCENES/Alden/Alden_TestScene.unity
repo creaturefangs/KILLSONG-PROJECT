@@ -14774,6 +14774,10 @@ MonoBehaviour:
   onInteraction:
     m_PersistentCalls:
       m_Calls: []
+  destroyOnPickup: 1
+  canInteract: 0
+  triggerObjectTagCheck: Player
+  player: {fileID: 0}
 --- !u!1 &1716865671
 GameObject:
   m_ObjectHideFlags: 0

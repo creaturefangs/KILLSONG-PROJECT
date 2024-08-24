@@ -5,10 +5,21 @@ using UnityEngine.Events;
 
 public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
 {
-    [Tooltip("Interaction Event.")]public UnityEvent onInteraction;
-    [Tooltip("Should this interactable get destroyed on pickup?")]public bool destroyOnPickup;
-    [Tooltip("Set if this object can be interacted with.")] public bool canInteract = false;
-    [Tooltip("Tag to check for trigger events, default is Player.")] public string triggerObjectTagCheck = "Player";
+    [Tooltip("Interaction Event.")]
+    public UnityEvent onInteraction;
+    [Tooltip("Should this interactable get destroyed on pickup?")]
+    public bool destroyOnPickup;
+    [Tooltip("Set if this object can be interacted with.")]
+     public bool canInteract = false;
+    [Tooltip("Tag to check for trigger events, default is Player.")]
+     public string triggerObjectTagCheck = "Player";
+    
+    [HideInInspector]
+    public GameObject player;
+
+    private void Awake(){
+        player = GameObject.FindWithTag("Player");
+    }
     public void OnTriggerEnter(Collider other)
     {
         if(!other.CompareTag(triggerObjectTagCheck)) return;
@@ -23,6 +34,8 @@ public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
     }
 
     public void OnPickup(){
-
+        if(destroyOnPickup){
+            Destroy(gameObject);
+        }
     }
 }

@@ -16,16 +16,16 @@ public class CPlayerHealth : MonoBehaviour
     private float volumeDeath = 0.2f;
 
     // Current health value
-    public int currentHealth = 100;
+    public float currentHealth = 100;
 
     // Maximum health value
-    public int maxHealth = 100;
+    public float maxHealth = 100;
 
     // Event triggered when the object dies
     public event System.Action OnDeath;
 
     // Method to take damage
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         currentHealth -= amount;
         audioSource.PlayOneShot(takeDamageSFX, volume);
@@ -39,7 +39,7 @@ public class CPlayerHealth : MonoBehaviour
     }
 
     // Method to heal
-    public void Heal(int amount)
+    public void Heal(float amount)
     {
         currentHealth += amount;
         // Ensure health doesn't exceed maximum
