@@ -104,7 +104,11 @@ public class CPlayerMovement : MonoBehaviour
     void ZoomCamera(float scrollInput)
     {
         float newFOV = playerCamera.fieldOfView - scrollInput * zoomSensitivity;
-        playerCamera.fieldOfView = Mathf.Clamp(newFOV, minZoom, maxZoom);
+        newFOV = Mathf.Clamp(newFOV, minZoom, maxZoom);
+        //playerCamera.fieldOfView = Mathf.Clamp(newFOV, minZoom, maxZoom);
+
+        //for smoother zooming - Alden
+        playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, newFOV, Time.deltaTime * zoomSensitivity);
     }
 }
 
