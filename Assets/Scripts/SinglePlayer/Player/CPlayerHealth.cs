@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 
-public class CPlayerHealth : MonoBehaviour
+public class CPlayerHealth : MonoBehaviour, IDamagable
 {
     // Respawn Screen
     public GameObject playerDeath;
@@ -32,14 +32,30 @@ public class CPlayerHealth : MonoBehaviour
     }
     public void TakeDamage(float amount)
     {
-        currentHealth -= amount;
-        audioSource.PlayOneShot(takeDamageSFX, volume);
-
-        // Check if health has reached zero or below
-        if (currentHealth <= 0)
+        if (currentHealth > 0)
         {
-            currentHealth = 0;
-            Die();
+            currentHealth -= amount;
+            audioSource.PlayOneShot(takeDamageSFX, volume);
+
+            // Check if health has reached zero or below
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                Die();
+            }
+        }
+        
+    }
+    public void TakeDamageOverTime(float amount, float tickMultiplier)
+    {
+        if (currentHealth > 0)
+        {
+            currentHealth -= amount * Time.deltaTime * tickMultiplier;
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                Die();
+            }
         }
     }
 

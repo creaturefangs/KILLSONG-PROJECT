@@ -17,4 +17,4 @@ MonoBehaviour:
     uiImage: {fileID: 0}
     uiImageSize: {x: 0, y: 0}
   interactionType: 2
-  interactionHoldDuration: 0
+  interactionHoldDuration: 2
