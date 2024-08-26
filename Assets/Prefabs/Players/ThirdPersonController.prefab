@@ -4955,6 +4955,7 @@ RectTransform:
   - {fileID: 1891244083289166477}
   - {fileID: 1892592250661666994}
   - {fileID: 5057393805221821275}
+  - {fileID: 3948507761481762346}
   m_Father: {fileID: 6787418710472402850}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5712,12 +5713,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3182209459841483882}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4109558676565446417}
+  m_Father: {fileID: 2660810771667170900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6333,7 +6334,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3948507761481762346}
   - {fileID: 1611834922357475270}
   - {fileID: 1490171544769589158}
   m_Father: {fileID: 2660810771667170900}
@@ -9256,7 +9256,17 @@ MonoBehaviour:
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
-  m_AfterStackBundles: []
+  m_AfterStackBundles:
+  - assemblyQualifiedName: PixelEffect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  - assemblyQualifiedName: CRT, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  - assemblyQualifiedName: NightVision, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  - assemblyQualifiedName: Outlines, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  - assemblyQualifiedName: SharpenEffect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &5155108386993954245
 GameObject:
   m_ObjectHideFlags: 0
@@ -11531,7 +11541,6 @@ MonoBehaviour:
   dnaCountText: {fileID: 1877227601636468532}
   dnaPickupUI: {fileID: 2127155998588273947}
   dnaPickupUIDuration: 3
-  dnaCountIncrease: 5
 --- !u!114 &8293193583446759392
 MonoBehaviour:
   m_ObjectHideFlags: 0

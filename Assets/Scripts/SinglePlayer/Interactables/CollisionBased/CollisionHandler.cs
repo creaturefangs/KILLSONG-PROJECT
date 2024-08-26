@@ -61,11 +61,6 @@ public class CollisionHandler : MonoBehaviour
     public GameObject dnaPickupUI;
     // Duration for which DNA pickup UI is displayed
     public float dnaPickupUIDuration = 3f;
-    // Amount to increase DNA count
-    public int dnaCountIncrease = 5;
-    private int totalDNA = 0;
-    
-
 
     private void Start()
     {
@@ -107,19 +102,7 @@ public class CollisionHandler : MonoBehaviour
             isInDamageArea = true;
             Debug.Log("Entered damage area");
         }
-        // else if (other.CompareTag("HealthPickup"))
-        // {
-        //     // Heal the player
-        //     playerHealth.Heal(25);
-        //     // Disable the health pickup collider
-        //     other.gameObject.SetActive(false);
-        //     Debug.Log("Collision with health pickup");
-        //     // audio feedback
-        //     audioSource.PlayOneShot(healthpickupSFX, volume);
-
-        //     // Display health pickup UI element
-        //     StartCoroutine(DisplayHealthPickupUI());
-        // }
+        
         else if (other.CompareTag("DoorLock"))
         {
             doorlockPanel.SetActive(true);
@@ -164,20 +147,7 @@ public class CollisionHandler : MonoBehaviour
             doorController.SetBool("DoorOpen", true);
             Debug.Log("Collision with door");
         }
-        else if (other.CompareTag("DNA"))
-        {
-            // Increase DNA count
-            totalDNA += dnaCountIncrease;
-            // Update DNA count text
-            dnaCountText.text = "DNA: " + totalDNA;
-            // Display DNA pickup UI element
-            StartCoroutine(DisplayDNAPickupUI());
-            // Disable the DNA pickup collider
-            other.gameObject.SetActive(false);
-            audioSource.PlayOneShot(dnaSFX, volume);
-            Debug.Log("Collision with DNA");
-        }
-
+   
     }
 
     private void OnTriggerExit(Collider other)
@@ -255,31 +225,5 @@ public class CollisionHandler : MonoBehaviour
         {
             Debug.LogWarning("Grenade animation or explosion sound not assigned.");
         }
-    }
-
-    // Coroutine to display health pickup UI element for a certain duration
-    private IEnumerator DisplayHealthPickupUI()
-    {
-        // Enable the health pickup UI element
-        healthPickupUI.SetActive(true);
-
-        // Wait for the specified duration
-        yield return new WaitForSeconds(healthPickupUIDuration);
-
-        // Disable the health pickup UI element after the duration
-        healthPickupUI.SetActive(false);
-    }
-
-    // Coroutine to display DNA pickup UI element for a certain duration
-    private IEnumerator DisplayDNAPickupUI()
-    {
-        // Enable the DNA pickup UI element
-        dnaPickupUI.SetActive(true);
-
-        // Wait for the specified duration
-        yield return new WaitForSeconds(dnaPickupUIDuration);
-
-        // Disable the DNA pickup UI element after the duration
-        dnaPickupUI.SetActive(false);
     }
 }

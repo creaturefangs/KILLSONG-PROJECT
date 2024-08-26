@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 
@@ -22,9 +21,15 @@ public class CPlayerHealth : MonoBehaviour
     public float maxHealth = 100;
 
     // Event triggered when the object dies
-    public event System.Action OnDeath;
+    public event Action OnDeath;
 
     // Method to take damage
+
+    private void Start()
+    {
+        //Subscribe OnDeath to the Die Function
+        OnDeath += Die;
+    }
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
@@ -50,7 +55,7 @@ public class CPlayerHealth : MonoBehaviour
     private void Die()
     {
         // Trigger the death event
-        OnDeath?.Invoke();
+        //OnDeath?.Invoke();
 
         //Play death sound
         audioSource.PlayOneShot(deathSFX, volumeDeath);

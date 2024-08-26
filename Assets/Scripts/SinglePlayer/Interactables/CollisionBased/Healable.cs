@@ -28,8 +28,8 @@ public class Healable : CollisionBasedInteractableObject, IHealthBoost
         while(currentTime < totalAmountToHeal){
             _playerHealth.Heal(Mathf.Lerp(
                 _playerHealth.currentHealth,
-                 _playerHealth.currentHealth + amountToIncrease,
-                  Time.deltaTime * totalTimeToIncrease));
+                _playerHealth.currentHealth + amountToIncrease,
+                Time.deltaTime * totalTimeToIncrease));
 
             currentTime = 0;
         }
