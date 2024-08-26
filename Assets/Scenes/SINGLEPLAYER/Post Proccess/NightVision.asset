@@ -1,5 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4320354086595610798
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 892855f33bdd6ff419eb623b99f86de8, type: 3}
+  m_Name: PixelEffect
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  SampleAmount:
+    overrideState: 1
+    value: 500
+  DitherAmount:
+    overrideState: 1
+    value: 0.01
+  ChannelQuantizationAmounts:
+    overrideState: 1
+    value: {x: 255, y: 255, z: 255, w: 255}
 --- !u!114 &-70907807254544420
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -45,6 +70,7 @@ MonoBehaviour:
   - {fileID: -70907807254544420}
   - {fileID: 5421147963532066805}
   - {fileID: 4666881854668747067}
+  - {fileID: -4320354086595610798}
 --- !u!114 &4666881854668747067
 MonoBehaviour:
   m_ObjectHideFlags: 3
