@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInteractableController : MonoBehaviour
 {   
@@ -15,28 +17,81 @@ public class PlayerInteractableController : MonoBehaviour
     private Coroutine _currentInteractionCooldown;
     //Can the player interact?
     private bool _canInteract = true;
+    
+    //How long has the interaction key been held during this interaction?
+    private float _currentInteractionHoldTime = 0f;
 
-    private PlayerUI _playerUI;
+    [SerializeField] private PlayerUI playerUI;
+    
+     private void Awake()
+     {
+         // Ensure the progress image is hidden initially
+        if (playerUI.interactionProgressImage != null)
+        {
+            playerUI.interactionProgressImage.fillAmount = 0f;
+            playerUI.interactionProgressImage.enabled = false; // Hide the image initially
+        }
+     }
 
-    private void Awake()
-    {
-        _playerUI = GetComponentInChildren<PlayerUI>();
-    }
     private void Update()
     {
-        if (currentInteractableObject == null) return;
+        if (currentInteractableObject == null || !_canInteract) return;
 
-        if(Input.GetKeyDown(interactKey) && _canInteract){  
-            currentInteractableObject.Interact();
-            _currentInteractionCooldown = StartCoroutine(InteractionCooldown());
-            print("interacted with " + currentInteractableObject.interactableData.name);
+        if (Input.GetKey(interactKey))
+        {
+            // Increment the hold time while the key is held
+            _currentInteractionHoldTime += Time.deltaTime;
+
+            // Update the progress image fill amount
+            if (playerUI.interactionProgressImage != null)
+            {
+                playerUI.interactionProgressImage.enabled = true; // Show the image while holding the key
+                playerUI.interactionProgressImage.fillAmount = _currentInteractionHoldTime / currentInteractableObject.interactableData.interactionHoldDuration;
+            }
+
+            // Check if the hold time meets or exceeds the required duration
+            if (_currentInteractionHoldTime >= currentInteractableObject.interactableData.interactionHoldDuration)
+            {
+                // Trigger the interaction
+                currentInteractableObject.Interact();
+                print("Interacted with " + currentInteractableObject.interactableData.name);
+                
+                // Start the interaction cooldown
+                _currentInteractionCooldown = StartCoroutine(InteractionCooldown());
+                //Clear interaction UI
+                playerUI.ClearInteractionDisplay();
+            }
+        }
+        else
+        {
+            // Reset the hold time and hide the progress image if the key is released
+            _currentInteractionHoldTime = 0f;
+
+            if (playerUI.interactionProgressImage != null)
+            {
+                playerUI.interactionProgressImage.fillAmount = 0f;
+                playerUI.interactionProgressImage.enabled = false; // Hide the image when the key is released
+            }
         }
     }
 
     private IEnumerator InteractionCooldown()
     {
+        // Disable interaction during cooldown
         _canInteract = false;
+        _currentInteractionHoldTime = 0f;  // Reset hold time for next interaction attempt
+        if (playerUI.interactionProgressImage != null)
+        {
+            playerUI.interactionProgressImage.fillAmount = 0f;
+            playerUI.interactionProgressImage.enabled = false; // Hide the image during cooldown
+        }
         yield return new WaitForSeconds(interactionDelay);
         _canInteract = true;
+    }
+
+    public void ToggleInteractionKey()
+    {
+        playerUI.interactionKeyImage.SetActive(!playerUI.interactionKeyImage.activeSelf);
+        playerUI.interactionProgressImage.gameObject.SetActive(!playerUI.interactionProgressImage.gameObject.activeSelf);
     }
 }

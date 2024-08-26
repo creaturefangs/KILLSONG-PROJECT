@@ -31,14 +31,8 @@ public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
         
         canInteract = true;
         player.GetComponent<PlayerInteractableController>().currentInteractableObject = this;
-        print(canInteract);
-        
-        //Display in UI
-        if (playerUI == null)
-        {
-            Debug.LogError("Playerui is null");
-            return;
-        }
+       
+        //Display interaction in UI
         playerUI.DisplayInteractionUI(KeyCode.E, interactableData.interactionType, interactableData.interactableStruct);
     }
 
@@ -48,8 +42,7 @@ public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
 
         canInteract = false;
         player.GetComponent<PlayerInteractableController>().currentInteractableObject = null;
-        print(canInteract);
-        
+
         //Clear interaction UI
         playerUI.ClearInteractionDisplay();
     }
