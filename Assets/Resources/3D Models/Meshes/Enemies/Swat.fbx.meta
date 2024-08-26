@@ -5,155 +5,185 @@ ModelImporter:
   internalIDToNameTable: []
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bodymat
+    second: {fileID: 2100000, guid: 2cb869147371999448d6c60453ac2575, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottommat
+    second: {fileID: 2100000, guid: a35b67f0b82d1e54684276d9871ec6c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glovemat
+    second: {fileID: 2100000, guid: 28597b1af8792524faf95f90f9bfab2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hatmat
+    second: {fileID: 2100000, guid: 5545d4448bf866e4fa515374385877fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shoesmat
+    second: {fileID: 2100000, guid: 90de6a725b74beb4e94b10adaf14268d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Topmat
+    second: {fileID: 2100000, guid: 22afaf4fa6872ca40a22c916bb659e14, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Body_Diffuse
-    second: {fileID: 2800000, guid: ec9c4ff1eaa3eab41a676d2ef4720434, type: 3}
+    second: {fileID: 2800000, guid: b0f1762e2f422f64d8352f234a6962ea, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Body_Gloss
-    second: {fileID: 2800000, guid: 51754f8551bea3348aeac6e6abbdf8d6, type: 3}
+    second: {fileID: 2800000, guid: 7ccee150eb3d8dd4eb923577648dea70, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Body_Normal
-    second: {fileID: 2800000, guid: f0159be7a27aa3547abb92e2b4455c4e, type: 3}
+    second: {fileID: 2800000, guid: 8f76d99009d1a5e4c8f00ef55657ad18, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Body_Opacity
-    second: {fileID: 2800000, guid: 44e29a5ba66592f43966101478005336, type: 3}
+    second: {fileID: 2800000, guid: 791bf473eba9d2345ab26a863e1c4a14, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Body_Specular
-    second: {fileID: 2800000, guid: 641e13b1f897f294093efab22f2a6f4a, type: 3}
+    second: {fileID: 2800000, guid: c19e001dd9a80494db33f442ab379914, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Bottom_Diffuse
-    second: {fileID: 2800000, guid: 035d4bae1ae9ed54d82795b796a2a76f, type: 3}
+    second: {fileID: 2800000, guid: 0202f37e4a253be428487f4777a5d928, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Bottom_Gloss
-    second: {fileID: 2800000, guid: 6034422bc8487234aadf9cd73d40d6da, type: 3}
+    second: {fileID: 2800000, guid: c179d091c34ca0048ba9b12235606a6a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Bottom_Normal
-    second: {fileID: 2800000, guid: 903c42faf7519e64b8f71d6cec8f44be, type: 3}
+    second: {fileID: 2800000, guid: ef93b79ac3e5a564188b74ba407f698b, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Bottom_Opacity
-    second: {fileID: 2800000, guid: 63d109febc6d135419715f722f836f49, type: 3}
+    second: {fileID: 2800000, guid: faeec9bc85a708e4f8ccc1b9c9e9be72, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Bottom_Specular
-    second: {fileID: 2800000, guid: 60e0581fe5cb72e4189346807cbf8881, type: 3}
+    second: {fileID: 2800000, guid: 26b274070715a4a4faabdb6319f7f50a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Glove_Diffuse
-    second: {fileID: 2800000, guid: d592f6942c4869c41838e04afa0f95d6, type: 3}
+    second: {fileID: 2800000, guid: 7c5751315e52c44448f968b9d7b90a22, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Glove_Gloss
-    second: {fileID: 2800000, guid: 5261f0a5178adae47bf07b28cc6e5546, type: 3}
+    second: {fileID: 2800000, guid: 4908ef5e752eed843b7b2b72085477aa, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Glove_Normal
-    second: {fileID: 2800000, guid: a0be63564dc248541a4d27504767368a, type: 3}
+    second: {fileID: 2800000, guid: a2e407dd9953dbf45beb15c522590069, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Glove_Opacity
-    second: {fileID: 2800000, guid: cfc634d9d59ae9f43b4ddb0829e2cf82, type: 3}
+    second: {fileID: 2800000, guid: 35f5d41664363f348b4b2a3681ac2632, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Glove_Specular
-    second: {fileID: 2800000, guid: f4f43cf46dc17f64792591d7985c12c9, type: 3}
+    second: {fileID: 2800000, guid: 659b6ee72f516304ab934c56f3f67213, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Hat_Diffuse
-    second: {fileID: 2800000, guid: a8e345b163422a24ea188ad8f6f46be8, type: 3}
+    second: {fileID: 2800000, guid: e2977be198b9d254ea91266ba728fdb5, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Hat_Gloss
-    second: {fileID: 2800000, guid: 5b6c3d8d7e1bf6547bb0b0202733d104, type: 3}
+    second: {fileID: 2800000, guid: 99c6996988f65394abbcea43fba620a1, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Hat_Normal
-    second: {fileID: 2800000, guid: 50a0f64e26cdd244b9079947168f2ace, type: 3}
+    second: {fileID: 2800000, guid: f18aac919317dd84d944fdf776a9c33f, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Hat_Opacity
-    second: {fileID: 2800000, guid: 09fb261991cd93e4eb104dd0ed29e474, type: 3}
+    second: {fileID: 2800000, guid: 7fb0fbea005fdd740bad74292bfe721b, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Hat_Specular
-    second: {fileID: 2800000, guid: 8af833dd5381b9b488d3c660767cbaa0, type: 3}
+    second: {fileID: 2800000, guid: 86015145d99e1204f9db40ee04d46261, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Shoes_Diffuse
-    second: {fileID: 2800000, guid: ae2f6526a2ea2b1438f0d207f52c1768, type: 3}
+    second: {fileID: 2800000, guid: 6f71e5f818d07464580a3891bd0a4494, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Shoes_Gloss
-    second: {fileID: 2800000, guid: 452b324c017c3ce4e933cc381b05d610, type: 3}
+    second: {fileID: 2800000, guid: fef7947cf43a4984abfddbe10d35f2dd, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Shoes_Normal
-    second: {fileID: 2800000, guid: 670a728406a734149a659eef3b07c598, type: 3}
+    second: {fileID: 2800000, guid: b8f12560653e4cd47a66901ccfbacf46, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Shoes_Opacity
-    second: {fileID: 2800000, guid: 4cf3081c0e78d344e8d0985539d73eb3, type: 3}
+    second: {fileID: 2800000, guid: 5f641ebda1b5b674da6d16ba332787a1, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Shoes_Specular
-    second: {fileID: 2800000, guid: 66f45bede3e98444abb2c437fc72b56d, type: 3}
+    second: {fileID: 2800000, guid: 6c1e00a0649880b4ab825a1cf35ba09c, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Top_Diffuse
-    second: {fileID: 2800000, guid: af0f71fefc2d05545b6b65f9e662140c, type: 3}
+    second: {fileID: 2800000, guid: 99f3d410e3147ad47919eec3f3ddf053, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Top_Gloss
-    second: {fileID: 2800000, guid: b69a000531cb3824e90d936f05a9fa48, type: 3}
+    second: {fileID: 2800000, guid: c34c4c73da7eb09468d497188e2afd84, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Top_Normal
-    second: {fileID: 2800000, guid: 687b9d51826fde34084747ba0c29abf9, type: 3}
+    second: {fileID: 2800000, guid: 607834b41468d1f43b57d134a9953423, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Top_Opacity
-    second: {fileID: 2800000, guid: dcc02e29c5fabf244b087bb6bb2ef712, type: 3}
+    second: {fileID: 2800000, guid: c590f7507b21dce468096eb48e3f3e7e, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Swat_Top_Specular
-    second: {fileID: 2800000, guid: 6384039767b13b44fa39eaca76092723, type: 3}
+    second: {fileID: 2800000, guid: d0121ea4b65578d4586f8ff93c3797e0, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

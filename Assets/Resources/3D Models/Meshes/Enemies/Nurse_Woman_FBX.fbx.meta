@@ -5,180 +5,220 @@ ModelImporter:
   internalIDToNameTable: []
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 2a2ab16cce2809e48a63cfe113ee81c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottom
+    second: {fileID: 2100000, guid: a0404e1e87d5c3c4d9d66f242d84fe4c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glove
+    second: {fileID: 2100000, guid: 30c861b367be9e84fbee68f4d63edbf4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair
+    second: {fileID: 2100000, guid: 492f71eff816ea745ac1c0f71d74980f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hat
+    second: {fileID: 2100000, guid: 9e0f4b80bffdc5d41abb1ef58be74693, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mask
+    second: {fileID: 2100000, guid: 9785ff734042d944a9d4ceeaa406a671, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shoes
+    second: {fileID: 2100000, guid: 7ab39634213d21543bc262cdcd76f7da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Top
+    second: {fileID: 2100000, guid: 762c32339f4b69844b238e687b40add4, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Body_diffuse
-    second: {fileID: 2800000, guid: ed20e2d468d2fb14c99475770c286b9d, type: 3}
+    second: {fileID: 2800000, guid: 7a0a259944c55d2409086fd5893b7cd8, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Body_gloss
-    second: {fileID: 2800000, guid: 22b5bdbc2b060b845902253977b5f5df, type: 3}
+    second: {fileID: 2800000, guid: 087272a4575a1224d9836a8fc659a22d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Body_normal
-    second: {fileID: 2800000, guid: 700431d5c04006043aab92c6c80fc482, type: 3}
+    second: {fileID: 2800000, guid: 38ce4b4e0a95c294da7dcddb64076c14, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Body_opacity
-    second: {fileID: 2800000, guid: 3b08219663a0c8147b6554af237638f8, type: 3}
+    second: {fileID: 2800000, guid: 47920fea3a194f4429eeef1ee02ebe8e, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Body_specular
-    second: {fileID: 2800000, guid: cd4b9f3fb7350a045977bb3cd463b98f, type: 3}
+    second: {fileID: 2800000, guid: 2fd132826ddbbf849b7584175391df91, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Bottom_diffuse
-    second: {fileID: 2800000, guid: 6b76fe3a1ec3baf4d9a14b72288ca84b, type: 3}
+    second: {fileID: 2800000, guid: 2ee539e7c18aaa64da9f3d4051d3126a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Bottom_gloss
-    second: {fileID: 2800000, guid: 026b8219377c7014188b9256aac77524, type: 3}
+    second: {fileID: 2800000, guid: d815f5b4c5587f040bcc4a77ea901b38, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Bottom_normal
-    second: {fileID: 2800000, guid: 414933f441e3c3c45896b7cabc51c5e9, type: 3}
+    second: {fileID: 2800000, guid: 9a4a324a83cce8641afd311c3f063796, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Bottom_specular
-    second: {fileID: 2800000, guid: cb7cf03997ceea84087dd44343272b90, type: 3}
+    second: {fileID: 2800000, guid: b856e43f25b81be41b8ad3052d49cab0, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Glove_diffuse
-    second: {fileID: 2800000, guid: be913d31e996d5e43afb06b1e5d4e250, type: 3}
+    second: {fileID: 2800000, guid: 54cedd9177497dd4393841f487b0139c, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Glove_gloss
-    second: {fileID: 2800000, guid: c82f0ccffb8c5f34f8163287f1e178fa, type: 3}
+    second: {fileID: 2800000, guid: 7705791d49f4cbb41bd5d31f6b5837a5, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Glove_normal
-    second: {fileID: 2800000, guid: 03fa34f0ef80b3a4fa58a6afdc120a79, type: 3}
+    second: {fileID: 2800000, guid: 1477ff6ab5d02544fb8b1c5a4bac4fdf, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Glove_opacity
-    second: {fileID: 2800000, guid: 01a02726c9a922842a89827f7ae91355, type: 3}
+    second: {fileID: 2800000, guid: 7e07742076e465c4ab7dd4a007e20238, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Glove_specular
-    second: {fileID: 2800000, guid: f47f007bebfcc1143a55ae6d0aacff22, type: 3}
+    second: {fileID: 2800000, guid: 47c6542592f455e40aa129df50fdec00, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Hair_diffuse
-    second: {fileID: 2800000, guid: ab2b5c0273464da40a0e0ce8cb8c5414, type: 3}
+    second: {fileID: 2800000, guid: e45f63294c5581b43b9b4e66c066292b, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Hair_gloss
-    second: {fileID: 2800000, guid: 4bc8eff5094c0c746a8c194f217333d4, type: 3}
+    second: {fileID: 2800000, guid: 12c8bb263713d5543b5f41cf853ba676, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Hair_normal
-    second: {fileID: 2800000, guid: f426e4ba108a2a2419542bb247204761, type: 3}
+    second: {fileID: 2800000, guid: ed0605ac00fe18c40b909ebb1244daa6, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Hair_opacity
-    second: {fileID: 2800000, guid: 10abe82f0af929f4c97aaac2ce44ea02, type: 3}
+    second: {fileID: 2800000, guid: ba65f5acec1fcf24f9ecacedeb6c31d5, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Hair_specular
-    second: {fileID: 2800000, guid: efd0879455ee72545a417b69c4cccc8e, type: 3}
+    second: {fileID: 2800000, guid: 90cf1eb6e5e889a40b180fd3267cfa95, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Hat_diffuse
-    second: {fileID: 2800000, guid: 9666d256d2d91be4ca84972fc327b3d6, type: 3}
+    second: {fileID: 2800000, guid: 1b502f53246cff1479811294fd191e07, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Hat_gloss
-    second: {fileID: 2800000, guid: 9365dcb955726c34195f910cbbddbd55, type: 3}
+    second: {fileID: 2800000, guid: e02db8a4f057a484bb14055ebec5fcbf, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Hat_normal
-    second: {fileID: 2800000, guid: 42910d95a19c3624ebf0f731b55bf1e4, type: 3}
+    second: {fileID: 2800000, guid: 21c5a10baa2536b4bac813ae90339f86, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Hat_specular
-    second: {fileID: 2800000, guid: a41b4c05f85f8294f9a059cc3ecf760b, type: 3}
+    second: {fileID: 2800000, guid: 2f146e7c1f3e4894eb4618c858fae869, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Mask_diffuse
-    second: {fileID: 2800000, guid: 6d1e601743b077d4d9002fb33a31aeb3, type: 3}
+    second: {fileID: 2800000, guid: 39bc3a515fd68964cb4a9706e2a7b88f, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Mask_gloss
-    second: {fileID: 2800000, guid: 15c28209ae165b24d97a319c99f4ba21, type: 3}
+    second: {fileID: 2800000, guid: 29fb9fc7564b04e409fe08bfd092d329, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Mask_normal
-    second: {fileID: 2800000, guid: 6f7309d52655b7346920ac5bf1e2877b, type: 3}
+    second: {fileID: 2800000, guid: 478dd9af2915e644d87f942bca22d3cb, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Mask_specular
-    second: {fileID: 2800000, guid: 40298376b1279294cba8f12cb6e28e93, type: 3}
+    second: {fileID: 2800000, guid: f07bc3f1013a07d4d84c9c99a2a90ca9, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Shoes_diffuse
-    second: {fileID: 2800000, guid: 468b351e9ef73da499fdfd8b0cc5ab12, type: 3}
+    second: {fileID: 2800000, guid: f209f3731893abc41ab596a3092684f7, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Shoes_gloss
-    second: {fileID: 2800000, guid: 31f893a4e2e77104182ac6664e5de8c3, type: 3}
+    second: {fileID: 2800000, guid: 64583fb22ba51db42a165d698d3e1bca, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Shoes_normal
-    second: {fileID: 2800000, guid: 93f0524fa7f10344995d5a7e8ad2db04, type: 3}
+    second: {fileID: 2800000, guid: cafb9d6268e94ee40a6dedeb93f49347, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Shoes_specular
-    second: {fileID: 2800000, guid: 524527969880d88499bfab1e8c9c4282, type: 3}
+    second: {fileID: 2800000, guid: d98a6a97490c21646a9568ab4dd7a845, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Top_diffuse
-    second: {fileID: 2800000, guid: 1d5e1a382b00fec4bb04eeb7842b053f, type: 3}
+    second: {fileID: 2800000, guid: 5961cacdea9054149805de691e70b01a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Top_gloss
-    second: {fileID: 2800000, guid: 6aad2e3cdc208b24ab128d2b1daeaabb, type: 3}
+    second: {fileID: 2800000, guid: 9697f429ee11b7f49be73c98de9fc456, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Top_normal
-    second: {fileID: 2800000, guid: 645ffb4579b4abd4b9b735c8298080e9, type: 3}
+    second: {fileID: 2800000, guid: c28d0ad066d82864caf431541c8553f8, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Nurse Woman1_Top_specular
-    second: {fileID: 2800000, guid: aae704e7b9bae884982c32531d899cef, type: 3}
+    second: {fileID: 2800000, guid: 3fb05fbfaa0afd840be06ebc98dff744, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
