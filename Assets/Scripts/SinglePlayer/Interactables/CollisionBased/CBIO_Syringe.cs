@@ -1,18 +1,15 @@
+using UnityEngine;
 public class CBIO_Syringe : Healable
 {   
-    //Old Code
-    
-    // else if (other.CompareTag("HealthPickup"))
-    // {
-    //     // Heal the player
-    //     playerHealth.Heal(25);
-    //     // Disable the health pickup collider
-    //     other.gameObject.SetActive(false);
-    //     Debug.Log("Collision with health pickup");
-    //     // audio feedback
-    //     audioSource.PlayOneShot(healthpickupSFX, volume);
+    [SerializeField] private AudioClip healthPickupSFX;
 
-    //     // Display health pickup UI element
-    //     StartCoroutine(DisplayHealthPickupUI());
-    // }
+    private new void Start()
+    {
+        onInteractionEvent.AddListener(() => EnvironmentalSoundController.Instance.PlaySound2D(healthPickupSFX, 1.0f));
+    }
+            
+    private new void OnTriggerEnter(Collider other)
+    {
+        base.OnTriggerEnter(other);
+    }
 }

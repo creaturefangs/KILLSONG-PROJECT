@@ -74,21 +74,12 @@ public class CollisionHandler : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        // If the player is in a damage area, apply damage over time
-        if (isInDamageArea)
-        {
-            ApplyDamageOverTime();
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("DamageBox"))
         {
             // Apply damage to the player
-            ApplyDamage(other.gameObject);
+            //ApplyDamage(other.gameObject);
             // Disable the damage box collider
             other.gameObject.SetActive(false);
             Debug.Log("Collision with damage box");
@@ -100,7 +91,7 @@ public class CollisionHandler : MonoBehaviour
             isInDamageArea = true;
             Debug.Log("Entered damage area");
         }
-        
+
         else if (other.CompareTag("DoorLock"))
         {
             doorlockPanel.SetActive(true);
@@ -124,58 +115,50 @@ public class CollisionHandler : MonoBehaviour
                 noteTxt.SetActive(false);
                 notePanel.SetActive(true);
             }
-        }
-        else if (other.CompareTag("Grenade"))
-        {
-            // Play grenade explosion animation and sound after 5 seconds
-            Invoke("PlayExplosion", 5f);
-            // Disable the grenade collider
-            other.gameObject.SetActive(false);
-            Debug.Log("Collision with grenade");
-        }
-        else if (other.CompareTag("SlowSurface"))
-        {
-            // Reduce player's movement speed
-            playerMovement.speed = 1f;
-            Debug.Log("Collision with slowing object");
-        }
-        else if (other.CompareTag("DoorTouch"))
-        {
-            // open the door via animation
-            doorController.SetBool("DoorOpen", true);
-            Debug.Log("Collision with door");
-        }
-   
-    }
 
+            else if (other.CompareTag("SlowSurface"))
+            {
+                // Reduce player's movement speed
+                playerMovement.speed = 1f;
+                Debug.Log("Collision with slowing object");
+            }
+            else if (other.CompareTag("DoorTouch"))
+            {
+                // open the door via animation
+                doorController.SetBool("DoorOpen", true);
+                Debug.Log("Collision with door");
+            }
+
+        }
+    }
     private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("DamageArea"))
         {
-            // Reset flag when the player exits the damage area
-            isInDamageArea = false;
-            Debug.Log("Exited damage area");
+            if (other.CompareTag("DamageArea"))
+            {
+                // Reset flag when the player exits the damage area
+                isInDamageArea = false;
+                Debug.Log("Exited damage area");
+            }
+            else if (other.CompareTag("DoorLock"))
+            {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                doorlockPanel.SetActive(false);
+                Debug.Log("Exited doorlock");
+            }
+            else if (other.CompareTag("Notes"))
+            {
+                noteTxt.SetActive(false);
+            }
+            else if (other.CompareTag("SlowSurface"))
+            {
+                // Reduce player's movement speed
+                playerMovement.speed = 5f;
+                Debug.Log("Exit collision with slowing object");
+            }
         }
-        else if (other.CompareTag("DoorLock"))
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-            doorlockPanel.SetActive(false);
-            Debug.Log("Exited doorlock");
-        }
-        else if (other.CompareTag("Notes"))
-        {
-            noteTxt.SetActive(false);
-        }
-        else if (other.CompareTag("SlowSurface"))
-        {
-            // Reduce player's movement speed
-            playerMovement.speed = 5f;
-            Debug.Log("Exit collision with slowing object");
-        }
-    }
 
-    // Apply damage to the player
+        // Apply damage to the player
     private void ApplyDamage(GameObject target)
     {
         // Check if the player has a health component
@@ -187,41 +170,5 @@ public class CollisionHandler : MonoBehaviour
         {
             Debug.LogWarning("No CPlayerHealth component found on player object. Damage not applied.");
         }
-    }
-
-    // Apply damage over time to the player while in a damage area
-    private void ApplyDamageOverTime()
-    {
-        // Only apply damage if the delay interval has passed
-        if (Time.time >= damageInterval)
-        {
-            // Calculate damage for this frame
-            float damageThisFrame = damagePerSecond * Time.deltaTime;
-
-            // Apply damage to the player
-            ApplyDamage(player);
-
-            // Increase the next damage interval by the delay
-            damageInterval = Time.time + 3f / damagePerSecond;
-
-            Debug.Log("Damage over time: " + damageThisFrame);
-        }
-    }
-
-    // Play grenade explosion animation and sound
-    private void PlayExplosion()
-    {
-        // Check if the grenade animation and explosion sound are assigned
-        if (grenadeAnimation != null && grenadeSFX != null)
-        {
-            // Play grenade explosion animation
-            grenadeAnimation.Play();
-
-            audioSource.PlayOneShot(grenadeSFX, volume);
-        }
-        else
-        {
-            Debug.LogWarning("Grenade animation or explosion sound not assigned.");
-        }
-    }
+    }    
 }

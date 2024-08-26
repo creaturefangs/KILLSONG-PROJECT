@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3205239159936747572}
   - component: {fileID: 1275626378476980704}
   m_Layer: 6
-  m_Name: CombatKnife
+  m_Name: PF_CombatKnife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

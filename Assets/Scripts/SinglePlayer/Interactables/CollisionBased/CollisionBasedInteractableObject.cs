@@ -18,7 +18,8 @@ public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
     
     [HideInInspector]
     public GameObject player;
-    public PlayerUI playerUI;
+    [HideInInspector]
+    private PlayerUI playerUI;
 
     private void Awake()
     {

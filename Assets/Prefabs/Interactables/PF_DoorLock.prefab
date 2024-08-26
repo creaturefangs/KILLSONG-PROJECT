@@ -1856,7 +1856,7 @@ GameObject:
   - component: {fileID: 8359555974287944939}
   - component: {fileID: 1940893344634304966}
   m_Layer: 0
-  m_Name: DoorLock
+  m_Name: PF_DoorLock
   m_TagString: DoorLock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
