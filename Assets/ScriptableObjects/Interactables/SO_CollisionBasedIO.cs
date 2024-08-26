@@ -4,4 +4,5 @@ using UnityEngine;
 public class SO_CollisionBasedIO : ScriptableObject
 {
     public STRInteractables interactableStruct;
+    public STRInteractables.EInteractionType interactionType;
 }

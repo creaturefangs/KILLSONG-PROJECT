@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
 {
     public SO_CollisionBasedIO interactableData;
-   
+    
     [Tooltip("Interaction Event.")]
     public UnityEvent onInteractionEvent;
     [Tooltip("Is this item a pickup?")]
@@ -20,38 +18,58 @@ public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
     
     [HideInInspector]
     public GameObject player;
+    public PlayerUI playerUI;
 
-    private void Awake(){
+    private void Awake()
+    {
         player = GameObject.FindWithTag("Player");
+        playerUI = FindObjectOfType<PlayerUI>();
     }
     public void OnTriggerEnter(Collider other)
     {
         if(!other.CompareTag(triggerObjectTagCheck)) return;
-
+        
         canInteract = true;
         player.GetComponent<PlayerInteractableController>().currentInteractableObject = this;
         print(canInteract);
+        
+        //Display in UI
+        if (playerUI == null)
+        {
+            Debug.LogError("Playerui is null");
+            return;
+        }
+        playerUI.DisplayInteractionUI(KeyCode.E, interactableData.interactionType, interactableData.interactableStruct);
     }
 
-    public void OnTriggerExit(Collider other){
+    public void OnTriggerExit(Collider other)
+    {
         if(!other.CompareTag(triggerObjectTagCheck)) return;
 
         canInteract = false;
         player.GetComponent<PlayerInteractableController>().currentInteractableObject = null;
         print(canInteract);
+        
+        //Clear interaction UI
+        playerUI.ClearInteractionDisplay();
     }
 
-    public void Interact(){
-        if(canInteract){
+    public void Interact()
+    {
+        if(canInteract)
+        {
             onInteractionEvent?.Invoke();
-            if(isPickup){
+            if(isPickup)
+            {
                 OnPickup();
             }
         }
     }
 
-    public void OnPickup(){
-        if(destroyOnInteraction){
+    public void OnPickup()
+    {
+        if(destroyOnInteraction)
+        {
             Destroy(gameObject);
         }
     }
