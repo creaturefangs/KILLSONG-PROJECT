@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5398404083453588836}
+  - component: {fileID: 1351325791818241275}
   m_Layer: 0
   m_Name: PF_Door
   m_TagString: Untagged
@@ -24,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707575820529203866}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.001461, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -33,6 +34,27 @@ Transform:
   - {fileID: 8138813752612212305}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1351325791818241275
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707575820529203866}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bd363fc1a349f894fb318845caabe8fa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7061766415412721956
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,9 +67,10 @@ GameObject:
   - component: {fileID: 2179594275265975649}
   - component: {fileID: 1112537289016418293}
   - component: {fileID: 3549209221242788726}
+  - component: {fileID: 4439503759882208225}
   m_Layer: 0
   m_Name: pCube4
-  m_TagString: Untagged
+  m_TagString: DoorTouch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +84,7 @@ Transform:
   m_GameObject: {fileID: 7061766415412721956}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.1197352, y: 3, z: 0.10154305}
+  m_LocalPosition: {x: -2.119735, y: 3, z: 0.101543}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -132,12 +155,34 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.8910341, y: 5.181387, z: 0.64103687}
-  m_Center: {x: 0.0000019669533, y: 0.00000023841858, z: 0.1732562}
+  m_Size: {x: 3.8910341, y: 5.181387, z: 2.4688256}
+  m_Center: {x: 0.0000019073486, y: 0.00000023841858, z: 1.0871505}
+--- !u!64 &4439503759882208225
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7061766415412721956}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3861478300804232965, guid: 67abb8d62d42fef49a13758cf3b16eee, type: 3}
 --- !u!1 &7964133408208945932
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +194,7 @@ GameObject:
   - component: {fileID: 6987717117612515847}
   - component: {fileID: 289811470189627724}
   - component: {fileID: 5357973213201179192}
+  - component: {fileID: 4910478733472007745}
   m_Layer: 0
   m_Name: pCube3
   m_TagString: Untagged
@@ -221,3 +267,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4910478733472007745
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7964133408208945932}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.8843865, y: 5.859954, z: 0.5211183}
+  m_Center: {x: -2.0767672, y: 0, z: 0.0000004768372}

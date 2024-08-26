@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7482624373361616785}
   - component: {fileID: 3755778012717543269}
   - component: {fileID: 5546700122084842025}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 9154183703036732657}
   - component: {fileID: 4485955302278927334}
   - component: {fileID: 4545942937377148375}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Button (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,13 +266,13 @@ GameObject:
   - component: {fileID: 53797306414835857}
   - component: {fileID: 4604187148533283068}
   - component: {fileID: 9021030477508072989}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DOORLOCK (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &53797306414835857
 RectTransform:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877086444959526007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -290,8 +290,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 585, y: -5}
+  m_SizeDelta: {x: -1238.6, y: -136.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4604187148533283068
 CanvasRenderer:
@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 8896085033741973999}
   - component: {fileID: 2186769275370879957}
   - component: {fileID: 8566010053627500516}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140065590298445920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -380,8 +380,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -682.7866, y: -79.94223}
-  m_SizeDelta: {x: -1475.5203, y: -314.7823}
+  m_AnchoredPosition: {x: 10, y: 19}
+  m_SizeDelta: {x: -230.9, y: -176.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2186769275370879957
 CanvasRenderer:
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 3258384190909610448}
   - component: {fileID: 7966298138923786752}
   - component: {fileID: 8472631377074482953}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -567,7 +567,7 @@ GameObject:
   - component: {fileID: 3402844856613030071}
   - component: {fileID: 4481357003543946502}
   - component: {fileID: 479018649298346006}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Button (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -687,7 +687,7 @@ GameObject:
   - component: {fileID: 5261835479944406487}
   - component: {fileID: 6875639374651457578}
   - component: {fileID: 2447908510636211454}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -822,7 +822,7 @@ GameObject:
   - component: {fileID: 2725851543179448149}
   - component: {fileID: 6617082608236947111}
   - component: {fileID: 1553149530608391297}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Button (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -942,7 +942,7 @@ GameObject:
   - component: {fileID: 5765362053879178927}
   - component: {fileID: 5072620459652414793}
   - component: {fileID: 1221678457643793313}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1076,7 +1076,7 @@ GameObject:
   - component: {fileID: 5023558926870413413}
   - component: {fileID: 6618238144215199591}
   - component: {fileID: 5550185290630516574}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1210,7 +1210,7 @@ GameObject:
   - component: {fileID: 7153280235642513362}
   - component: {fileID: 8505576109201711684}
   - component: {fileID: 9104258260266035149}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1344,7 +1344,7 @@ GameObject:
   - component: {fileID: 6884258559142651705}
   - component: {fileID: 4424583767230609167}
   - component: {fileID: 426326617447316400}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1478,7 +1478,7 @@ GameObject:
   - component: {fileID: 3914269784928105971}
   - component: {fileID: 340242623434734712}
   - component: {fileID: 8418249246855751230}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1613,7 +1613,7 @@ GameObject:
   - component: {fileID: 232773699255479713}
   - component: {fileID: 4362908057938804582}
   - component: {fileID: 1567341870248975855}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Button (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1734,7 +1734,7 @@ GameObject:
   - component: {fileID: 7418737915519417985}
   - component: {fileID: 3235178015935111756}
   - component: {fileID: 506056419935662214}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1872,7 +1872,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.86, y: 1.97, z: 2.2}
-  m_LocalScale: {x: 0.54494, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 984580578845883327}
@@ -1960,7 +1960,7 @@ GameObject:
   - component: {fileID: 5329520354222839611}
   - component: {fileID: 3095939605532743428}
   - component: {fileID: 2256619562162226938}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2095,7 +2095,7 @@ GameObject:
   - component: {fileID: 3950608995357997082}
   - component: {fileID: 6350375275951456164}
   - component: {fileID: 4523224201826214079}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Button (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2216,7 +2216,7 @@ GameObject:
   - component: {fileID: 950156614980857205}
   - component: {fileID: 2824957618642858006}
   - component: {fileID: 1084172475678652331}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Button (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2336,7 +2336,7 @@ GameObject:
   - component: {fileID: 2046411030237840850}
   - component: {fileID: 8614202110992808767}
   - component: {fileID: 3828611242074597169}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2412,7 +2412,7 @@ GameObject:
   - component: {fileID: 1712859731685251296}
   - component: {fileID: 1088375881528290298}
   - component: {fileID: 7333247151992270370}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Button (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2533,7 +2533,7 @@ GameObject:
   - component: {fileID: 2812124821060964383}
   - component: {fileID: 2087384758372606042}
   - component: {fileID: 1262989424977062770}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Button (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2653,7 +2653,7 @@ GameObject:
   - component: {fileID: 5343108707742393781}
   - component: {fileID: 1336424917165766129}
   - component: {fileID: 6572898553762418266}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2787,7 +2787,7 @@ GameObject:
   - component: {fileID: 6098895838050992787}
   - component: {fileID: 8265405427692219090}
   - component: {fileID: 3010807142833855450}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2868,13 +2868,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.4
-  m_fontSizeBase: 31.4
+  m_fontSize: 43.37
+  m_fontSizeBase: 43.37
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
@@ -2921,7 +2921,7 @@ GameObject:
   - component: {fileID: 8667126003437041057}
   - component: {fileID: 546901228969703965}
   - component: {fileID: 8524995962108663663}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3056,7 +3056,7 @@ GameObject:
   - component: {fileID: 8277114854648438294}
   - component: {fileID: 5539312506827364340}
   - component: {fileID: 2526900444964899310}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Button (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3177,7 +3177,7 @@ GameObject:
   - component: {fileID: 4906959611809766413}
   - component: {fileID: 3089845566684076052}
   - component: {fileID: 4205421212869870526}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Button (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3297,7 +3297,7 @@ GameObject:
   - component: {fileID: 5732785218854882567}
   - component: {fileID: 2638955746282570005}
   - component: {fileID: 7015592478310721748}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3373,13 +3373,13 @@ GameObject:
   - component: {fileID: 6657818116733160467}
   - component: {fileID: 1869921403370018860}
   - component: {fileID: 7612946657633867229}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &984580578845883327
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3409,17 +3409,17 @@ Canvas:
   m_GameObject: {fileID: 7859575729372214317}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PlaneDistance: 0.4
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_UpdateRectTransformForStandalone: 0
+  m_AdditionalShaderChannelsFlag: 31
+  m_UpdateRectTransformForStandalone: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -3475,7 +3475,7 @@ GameObject:
   - component: {fileID: 2154731658013609736}
   - component: {fileID: 5774528281910787496}
   - component: {fileID: 4923984413305661293}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3490,7 +3490,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7871700165346693316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3499,8 +3499,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 303, y: -340.95}
-  m_SizeDelta: {x: 108.276, y: 83.3164}
+  m_AnchoredPosition: {x: 4, y: -443}
+  m_SizeDelta: {x: 148.8, y: 83.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2154731658013609736
 CanvasRenderer:
@@ -3607,7 +3607,7 @@ GameObject:
   - component: {fileID: 6242565546877324108}
   - component: {fileID: 7846290730927153069}
   - component: {fileID: 1042552234337722100}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3742,7 +3742,7 @@ GameObject:
   - component: {fileID: 4891953678900717539}
   - component: {fileID: 8247662054110677370}
   - component: {fileID: 1624129999148104131}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Button (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
