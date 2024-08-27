@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3052895368664758135}
   - component: {fileID: 8363723242726090962}
   - component: {fileID: 1760728710131139380}
+  - component: {fileID: 7120998191658473216}
   m_Layer: 0
   m_Name: HealthPickup
   m_TagString: HealthPickup
@@ -238,6 +239,44 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7120998191658473216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7778497171457036685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c16e4f121a9f6b409b0068e5e6d48a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableData: {fileID: 11400000, guid: 9ce9d05048e0d0843a435273543e3875, type: 2}
+  onInteractionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7120998191658473216}
+        m_TargetAssemblyTypeName: Healable, Assembly-CSharp
+        m_MethodName: ImmediateHealthIncrease
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 25
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEndInteractionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isPickup: 1
+  destroyOnInteraction: 1
+  canInteract: 0
+  triggerObjectTagCheck: Player
+  player: {fileID: 0}
+  totalAmountToHeal: 25
+  healthPickupSFX: {fileID: 8300000, guid: 0cba53e7bf1a628429fe511f2bab437a, type: 3}
 --- !u!1001 &5920630947197136175
 PrefabInstance:
   m_ObjectHideFlags: 0

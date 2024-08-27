@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3820780653279365153}
+  - component: {fileID: 7884014072134591339}
+  - component: {fileID: 738535621199963480}
   m_Layer: 0
   m_Name: PF_BearTrap
   m_TagString: Untagged
@@ -35,6 +37,67 @@ Transform:
   - {fileID: 4262051643422338448}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7884014072134591339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3367903663079259467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f579bab330ad6479a458ebefcd9a22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageType: 0
+  isTrigger: 1
+  disableAfterOneUse: 1
+  canDamage: 1
+  triggerTagCheck: Player
+  damageAmount: 25
+  damageTickMultiplier: 1
+  onDamageStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7884014072134591339}
+        m_TargetAssemblyTypeName: CBIO_BearTrap, Assembly-CSharp
+        m_MethodName: ActivateBearTrap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDamageEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  bearTrapSFX:
+  - {fileID: 8300000, guid: 411fc867e9acf3f4ea5098f4b0151680, type: 3}
+  - {fileID: 8300000, guid: fa0e7197a2f08cf4794ecf03c4fafbff, type: 3}
+--- !u!65 &738535621199963480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3367903663079259467}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6, y: 0.25, z: 0.6}
+  m_Center: {x: 0.59, y: 0.35, z: -0.18}
 --- !u!1 &4510383533443375293
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ae96862d64d53814fac1df9605e6af16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.9905157
+      value: 0.16061258
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae96862d64d53814fac1df9605e6af16, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7724185
+      value: -1.599267
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae96862d64d53814fac1df9605e6af16, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.7119
+      value: 3.8746738
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae96862d64d53814fac1df9605e6af16, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae96862d64d53814fac1df9605e6af16, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae96862d64d53814fac1df9605e6af16, type: 3}
       propertyPath: m_LocalRotation.z
@@ -54,10 +54,57 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 25068a903eef1864cbfd8f3bf83caa78, type: 2}
     - target: {fileID: 919132149155446097, guid: ae96862d64d53814fac1df9605e6af16, type: 3}
       propertyPath: m_Name
-      value: Pf_Grenade Variant
+      value: PF_Grenade
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ae96862d64d53814fac1df9605e6af16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8677331085911486021}
   m_SourcePrefab: {fileID: 100100000, guid: ae96862d64d53814fac1df9605e6af16, type: 3}
+--- !u!1 &2923675504055047431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ae96862d64d53814fac1df9605e6af16, type: 3}
+  m_PrefabInstance: {fileID: 2617597095556376662}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8677331085911486021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2923675504055047431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c13c6e5dfe4d64583f2bad9a07def5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageType: 0
+  isTrigger: 0
+  disableAfterOneUse: 1
+  canDamage: 1
+  triggerTagCheck: Player
+  damageAmount: 50
+  damageTickMultiplier: 1
+  onDamageStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8677331085911486021}
+        m_TargetAssemblyTypeName: Grenade, Assembly-CSharp
+        m_MethodName: PlayExplosion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDamageEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  grenadeAnimation: {fileID: 0}
+  grenadeSFX: {fileID: 8300000, guid: d1bef9d95b59ff840adf74176e374ca4, type: 3}
