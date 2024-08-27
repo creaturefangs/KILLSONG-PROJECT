@@ -50,10 +50,10 @@ public class CPlayerHealth : MonoBehaviour, IDamagable
     {
         if (currentHealth > 0)
         {
-            currentHealth -= amount * Time.deltaTime * tickMultiplier;
+            currentHealth -= amount * (Time.deltaTime * tickMultiplier);
+
             if (currentHealth <= 0)
             {
-                currentHealth = 0;
                 Die();
             }
         }

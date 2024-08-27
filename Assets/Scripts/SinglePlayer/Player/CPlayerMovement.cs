@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class CPlayerMovement : MonoBehaviour
 {
+    public enum MovementTypes
+    {
+        Slow,
+        Normal
+    }
+    public MovementTypes movementType;
     public float speed = 5f; // Movement speed
    
     [SerializeField] private float sprintSpeed = 10f; // Sprinting speed
@@ -23,6 +29,22 @@ public class CPlayerMovement : MonoBehaviour
     private int jumpCount = 0;
     private float distanceToGround;
 
+    private bool _canRotate = true;
+    private bool _canMove = true;
+
+    #region Properties
+    public bool GetCanRotate
+    {
+        get { return _canRotate; }
+    }
+
+    public bool GetCanMove
+    {
+        get { return _canMove; }
+    }
+    #endregion
+    
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -34,51 +56,65 @@ public class CPlayerMovement : MonoBehaviour
 
     void Update()
     {
+        #region Movement
         // Player movement input
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        // Check if sprint key is pressed
-        isSprinting = Input.GetKey(KeyCode.LeftShift);
-
-        // Check if there's any movement input
-        if (horizontalInput != 0 || verticalInput != 0)
+        if (_canMove)
         {
-            float currentSpeed = isSprinting ? sprintSpeed : speed;
-            movement = new Vector3(horizontalInput, 0f, verticalInput).normalized * currentSpeed;
+            // Check if sprint key is pressed
+            isSprinting = Input.GetKey(KeyCode.LeftShift);
+
+            // Check if there's any movement input
+            if (horizontalInput != 0 || verticalInput != 0)
+            {
+                float currentSpeed = isSprinting ? sprintSpeed : speed;
+                movement = new Vector3(horizontalInput, 0f, verticalInput).normalized * currentSpeed;
+            }
+            else
+            {
+                movement = Vector3.zero; // No movement input, reset movement vector
+            }
         }
-        else
+        #endregion
+        #region Mouse Rotation
+        if (_canRotate)
         {
-            movement = Vector3.zero; // No movement input, reset movement vector
+            // Mouse look input for camera rotation around the player
+            mouseX += Input.GetAxis("Mouse X") * mouseSensitivity;
+            mouseY -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+            mouseY = Mathf.Clamp(mouseY, -30f, 60f); // Limit vertical rotation to prevent the camera from flipping
+
+            // Rotate the camera around the player
+            playerCamera.transform.localRotation = Quaternion.Euler(mouseY, 0f, 0f);
+            transform.rotation = Quaternion.Euler(0f, mouseX, 0f);
         }
-
-        // Mouse look input for camera rotation around the player
-        mouseX += Input.GetAxis("Mouse X") * mouseSensitivity;
-        mouseY -= Input.GetAxis("Mouse Y") * mouseSensitivity;
-        mouseY = Mathf.Clamp(mouseY, -30f, 60f); // Limit vertical rotation to prevent the camera from flipping
-
-        // Rotate the camera around the player
-        playerCamera.transform.localRotation = Quaternion.Euler(mouseY, 0f, 0f);
-        transform.rotation = Quaternion.Euler(0f, mouseX, 0f);
-
+        #endregion
+        #region Jumping
         // Jump input
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
         }
-
+        #endregion
+        #region Scrolling
         // Mouse zoom input
         float scrollInput = Input.GetAxis("Mouse ScrollWheel");
         if (scrollInput != 0f)
         {
             ZoomCamera(scrollInput);
         }
+        #endregion
     }
 
     void FixedUpdate()
     {
-        // Move the player
-        PerformMovement(movement);
+        if (_canMove)
+        {
+            // Move the player
+            PerformMovement(movement);
+        }
     }
 
     void PerformMovement(Vector3 move)
@@ -109,5 +145,15 @@ public class CPlayerMovement : MonoBehaviour
 
         //for smoother zooming - Alden
         playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, newFOV, Time.deltaTime * zoomSensitivity);
+    }
+
+    public void ToggleMovement()
+    {
+        _canMove = !_canMove;
+    }
+
+    public void ToggleRotation()
+    {
+        _canRotate = !_canRotate;
     }
 }

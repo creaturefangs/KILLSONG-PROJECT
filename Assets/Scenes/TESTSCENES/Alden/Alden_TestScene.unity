@@ -244,7 +244,7 @@ MonoBehaviour:
       m_Calls: []
   timeSinceLastZap: 0
   zapParticles: {fileID: 1000011396044746, guid: 9b28c4485282efb4c83e9f4c36ec4719, type: 3}
-  timeToDestroyAfterZap: 0.5
+  timeToDestroyAfterZap: 1
   zapSound: {fileID: 8300000, guid: 9574899355b47364b8ac7c27dfc99af6, type: 3}
   lasers:
   - {fileID: 1610111339}

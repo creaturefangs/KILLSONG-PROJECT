@@ -4,7 +4,7 @@ public class CBIO_DoorLock : CollisionBasedInteractableObject
 {
     [SerializeField] private GameObject doorLockPanel;
     [SerializeField] private AudioClip doorLockSFX;
-
+    
     public void HandleDoorLock(bool active)
     {
         doorLockPanel.SetActive(active);
@@ -20,6 +20,4 @@ public class CBIO_DoorLock : CollisionBasedInteractableObject
             Cursor.visible = false;
         }
     }
-    
-    
 }
