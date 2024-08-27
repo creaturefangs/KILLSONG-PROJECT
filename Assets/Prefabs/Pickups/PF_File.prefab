@@ -60,7 +60,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!114 &569564808257395149
 MonoBehaviour:
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 8136406366302054093}
   - component: {fileID: 7153455640008096245}
   m_Layer: 0
-  m_Name: Image
+  m_Name: NoteImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,6 +209,7 @@ RectTransform:
   m_Children:
   - {fileID: 807835187176804067}
   - {fileID: 8674251577845794229}
+  - {fileID: 218438790638382703}
   m_Father: {fileID: 4752039349555687520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -266,7 +267,7 @@ GameObject:
   - component: {fileID: 322552014964498852}
   - component: {fileID: 8829307988620333682}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: ExitText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -477,6 +478,7 @@ GameObject:
   - component: {fileID: 6278456058479286704}
   - component: {fileID: 1091303105389939309}
   - component: {fileID: 6580566049811631614}
+  - component: {fileID: 6135731785611677607}
   m_Layer: 0
   m_Name: PF_File
   m_TagString: Notes
@@ -494,7 +496,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.82692367, z: 0, w: 0.56231433}
   m_LocalPosition: {x: 14.98, y: 1.4411, z: -5.86}
-  m_LocalScale: {x: 0.043574244, y: 0.05368517, z: 0.05368517}
+  m_LocalScale: {x: 0.04357424, y: 0.05368517, z: 0.053685166}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2924816312641880050}
@@ -561,7 +563,7 @@ Halo:
   m_Color:
     serializedVersion: 2
     rgba: 4278239743
-  m_Size: -0.5
+  m_Size: 0.5
 --- !u!95 &1091303105389939309
 Animator:
   serializedVersion: 5
@@ -602,8 +604,62 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 48.191055, y: 11.212291, z: 44.801502}
-  m_Center: {x: 1.8666515, y: 2.068626, z: 0.023881778}
+  m_Size: {x: 25, y: 11.212291, z: 25}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6135731785611677607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7256584752984264344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24487e0620dcb0c41b9ee33359800802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableData: {fileID: 11400000, guid: 08e77c4a555be4d40b4d1969bb7daae2, type: 2}
+  onInteractionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6135731785611677607}
+        m_TargetAssemblyTypeName: CBIO_Note, Assembly-CSharp
+        m_MethodName: ToggleNoteUI
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onEndInteractionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6135731785611677607}
+        m_TargetAssemblyTypeName: CBIO_Note, Assembly-CSharp
+        m_MethodName: ToggleNoteUI
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  isPickup: 0
+  destroyOnInteraction: 0
+  canInteract: 0
+  triggerObjectTagCheck: Player
+  player: {fileID: 0}
+  note: {fileID: 11400000, guid: 7fd85e87760309e4bad77d4b7d4bc8dd, type: 2}
+  noteImage: {fileID: 7153455640008096245}
+  noteCanvas: {fileID: 102902087328528740}
+  fileOpenButton: {fileID: 7488791951644302202}
+  escapeNoteKey: 114
+  noteSFX: {fileID: 8300000, guid: fba439e1b58ba4429b4475229512e02e, type: 3}
 --- !u!1 &7402263197032689990
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,3 +737,135 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7488791951644302202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 218438790638382703}
+  - component: {fileID: 3605228844871175800}
+  - component: {fileID: 4298055726847248932}
+  - component: {fileID: 2858822894281061573}
+  m_Layer: 0
+  m_Name: FileOpenButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &218438790638382703
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7488791951644302202}
+  m_LocalRotation: {x: -0, y: 0.000000029802322, z: -0.04347144, w: 0.9990547}
+  m_LocalPosition: {x: 0, y: 0, z: 15}
+  m_LocalScale: {x: 3.8502, y: 27.887337, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6720342788727598510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.983}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 294, y: 3}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3605228844871175800
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7488791951644302202}
+  m_CullTransparentMesh: 1
+--- !u!114 &4298055726847248932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7488791951644302202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2858822894281061573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7488791951644302202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 4298055726847248932}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6135731785611677607}
+        m_TargetAssemblyTypeName: CBIO_Note, Assembly-CSharp
+        m_MethodName: HandleNoteActivationButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

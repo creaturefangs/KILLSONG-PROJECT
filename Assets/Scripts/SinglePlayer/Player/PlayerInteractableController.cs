@@ -1,8 +1,5 @@
-using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerInteractableController : MonoBehaviour
 {   
@@ -54,7 +51,7 @@ public class PlayerInteractableController : MonoBehaviour
             {
                 // Trigger the interaction
                 currentInteractableObject.Interact();
-                print("Interacted with " + currentInteractableObject.interactableData.name);
+                //print("Interacted with " + currentInteractableObject.interactableData.name);
                 
                 // Start the interaction cooldown
                 _currentInteractionCooldown = StartCoroutine(InteractionCooldown());

@@ -43,7 +43,6 @@ public class DamageInstigator : MonoBehaviour
                 case DamageType.OverTime:
                     if (_damageCoroutine == null)
                     {
-                        Debug.Log("Starting Damage Over Time Coroutine");
                         _damageCoroutine = StartCoroutine(ApplyDamageOverTime(damagable));
                     }
                     break;
@@ -63,19 +62,13 @@ public class DamageInstigator : MonoBehaviour
 
     private IEnumerator ApplyDamageOverTime(IDamagable damagable)
     {
-        Debug.Log("Damage Over Time Coroutine Started");
-
         while (_inDamageArea)
         {
-            Debug.Log("Applying Damage Over Time");
             damagable.TakeDamageOverTime(damageAmount, damageTickMultiplier);
             yield return new WaitForSeconds(1.0f / damageTickMultiplier);
         }
-
-        Debug.Log("Exiting Damage Over Time Coroutine");
     }
-
-
+    
     private void OnTriggerExit(Collider other)
     {
         if (!other.gameObject.CompareTag(triggerTagCheck)) return;
@@ -85,7 +78,6 @@ public class DamageInstigator : MonoBehaviour
             _inDamageArea = false;
             if (_damageCoroutine != null)
             {
-                Debug.Log("Stopping Damage Over Time Coroutine");
                 StopCoroutine(_damageCoroutine);
                 _damageCoroutine = null;
             }
@@ -98,5 +90,4 @@ public class DamageInstigator : MonoBehaviour
             canDamage = false;
         }
     }
-
 }

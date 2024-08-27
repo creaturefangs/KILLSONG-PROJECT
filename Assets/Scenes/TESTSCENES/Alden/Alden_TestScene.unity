@@ -10080,80 +10080,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3367903663079259467, guid: e0ed4348d1dd39848bb61a2b375a9964, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1146764298}
-    - targetCorrespondingSourceObject: {fileID: 3367903663079259467, guid: e0ed4348d1dd39848bb61a2b375a9964, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1146764300}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0ed4348d1dd39848bb61a2b375a9964, type: 3}
---- !u!1 &1146764297 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3367903663079259467, guid: e0ed4348d1dd39848bb61a2b375a9964, type: 3}
-  m_PrefabInstance: {fileID: 1146764296}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1146764298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1146764297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05f579bab330ad6479a458ebefcd9a22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageType: 0
-  isTrigger: 1
-  disableAfterOneUse: 1
-  canDamage: 1
-  triggerTagCheck: Player
-  damageAmount: 25
-  damageTickMultiplier: 1
-  onDamageStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1146764298}
-        m_TargetAssemblyTypeName: CBIO_BearTrap, Assembly-CSharp
-        m_MethodName: ActivateBearTrap
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDamageEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  bearTrapSFX:
-  - {fileID: 8300000, guid: 411fc867e9acf3f4ea5098f4b0151680, type: 3}
-  - {fileID: 8300000, guid: fa0e7197a2f08cf4794ecf03c4fafbff, type: 3}
---- !u!65 &1146764300
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1146764297}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.6, y: 0.25, z: 0.6}
-  m_Center: {x: 0.59, y: 0.35, z: -0.18}
 --- !u!4 &1146764301 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3820780653279365153, guid: e0ed4348d1dd39848bb61a2b375a9964, type: 3}
@@ -13018,11 +12946,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4258169094300328401, guid: f9fa0dec0e375a5469944a11b5c3b7ea, type: 3}
   m_PrefabInstance: {fileID: 898503324}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1394346443 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4880594012609298909, guid: 31f504259f67719488df68c43ddbb76e, type: 3}
-  m_PrefabInstance: {fileID: 7929529025539174718}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1404094844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14051,50 +13974,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9fa0dec0e375a5469944a11b5c3b7ea, type: 3}
---- !u!1 &1485389478 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2923675504055047431, guid: 78a7882872be10d48aa53f1ca5278d80, type: 3}
-  m_PrefabInstance: {fileID: 5481282074565076139}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1485389479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1485389478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91c13c6e5dfe4d64583f2bad9a07def5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageType: 0
-  isTrigger: 0
-  disableAfterOneUse: 1
-  canDamage: 1
-  triggerTagCheck: Player
-  damageAmount: 50
-  damageTickMultiplier: 1
-  onDamageStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1485389479}
-        m_TargetAssemblyTypeName: Grenade, Assembly-CSharp
-        m_MethodName: PlayExplosion
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDamageEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  grenadeAnimation: {fileID: 0}
-  grenadeSFX: {fileID: 8300000, guid: d1bef9d95b59ff840adf74176e374ca4, type: 3}
 --- !u!4 &1485389482 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2583144024685023165, guid: 78a7882872be10d48aa53f1ca5278d80, type: 3}
@@ -16350,54 +16229,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7778497171457036685, guid: 32f0d2e68d9def64eaad88f47aa7d773, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1714736906}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f0d2e68d9def64eaad88f47aa7d773, type: 3}
---- !u!1 &1714736905 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7778497171457036685, guid: 32f0d2e68d9def64eaad88f47aa7d773, type: 3}
-  m_PrefabInstance: {fileID: 1714736904}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1714736906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714736905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c16e4f121a9f6b409b0068e5e6d48a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactableData: {fileID: 11400000, guid: 9ce9d05048e0d0843a435273543e3875, type: 2}
-  onInteractionEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1714736906}
-        m_TargetAssemblyTypeName: Healable, Assembly-CSharp
-        m_MethodName: ImmediateHealthIncrease
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 25
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onEndInteractionEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  isPickup: 1
-  destroyOnInteraction: 1
-  canInteract: 0
-  triggerObjectTagCheck: Player
-  player: {fileID: 0}
-  totalAmountToHeal: 25
-  healthPickupSFX: {fileID: 8300000, guid: 0cba53e7bf1a628429fe511f2bab437a, type: 3}
 --- !u!1 &1716865671
 GameObject:
   m_ObjectHideFlags: 0
@@ -20683,10 +20516,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2923675504055047431, guid: 78a7882872be10d48aa53f1ca5278d80, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1485389479}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78a7882872be10d48aa53f1ca5278d80, type: 3}
 --- !u!1 &5506789793761991445
 GameObject:
@@ -20933,6 +20763,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1626000772}
     m_Modifications:
+    - target: {fileID: 4316435774373816102, guid: 31f504259f67719488df68c43ddbb76e, type: 3}
+      propertyPath: onInteractionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1800993862}
     - target: {fileID: 4825926801511717045, guid: 31f504259f67719488df68c43ddbb76e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.726356
@@ -20980,52 +20814,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4880594012609298909, guid: 31f504259f67719488df68c43ddbb76e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7929529025539174722}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f504259f67719488df68c43ddbb76e, type: 3}
 --- !u!4 &7929529025539174719 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4825926801511717045, guid: 31f504259f67719488df68c43ddbb76e, type: 3}
   m_PrefabInstance: {fileID: 7929529025539174718}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7929529025539174722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1394346443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21a750b0a410b474fb428e1616fd498e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactableData: {fileID: 11400000, guid: 0a598311b1af63c47878bdf6089bd945, type: 2}
-  onInteractionEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1800993862}
-        m_TargetAssemblyTypeName: PlayerDNAHandler, Assembly-CSharp
-        m_MethodName: IncreaseDna
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onEndInteractionEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  isPickup: 1
-  destroyOnInteraction: 1
-  canInteract: 0
-  triggerObjectTagCheck: Player
-  player: {fileID: 0}
 --- !u!1001 &8024902624020143016
 PrefabInstance:
   m_ObjectHideFlags: 0

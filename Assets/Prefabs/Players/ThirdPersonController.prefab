@@ -2207,7 +2207,7 @@ GameObject:
   - component: {fileID: 250382262076519866}
   - component: {fileID: 5602787641737635700}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: PlayerUICanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2407,7 +2407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb21acff631060140a3dff7b81e4adc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameIsPaused: 0
+  gameIsPaused: 0
   pauseMenuUI: {fileID: 8788252273588216843}
   playerUI: {fileID: 2668391679386605627}
   pauseSFX: {fileID: 5508475565549126010}
@@ -5969,7 +5969,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 947.1875, y: 96.99878}
-  m_SizeDelta: {x: 600, y: 57.5124}
+  m_SizeDelta: {x: 750, y: 57.5124}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5865131752841409169
 CanvasRenderer:
@@ -11802,6 +11802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86605f7eaa1a46d46b0028039ca1e7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementType: 0
   speed: 5
   sprintSpeed: 10
   jumpForce: 5
@@ -11843,26 +11844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d59cf99f275886444aad96b0614b10cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 10
-  damagePerSecond: 5
-  player: {fileID: 7040538890475621896}
-  doorlockPanel: {fileID: 2835414052421400050}
-  noteTxt: {fileID: 5951931683007469571}
-  notePanel: {fileID: 3564190552212297665}
-  healthpickupSFX: {fileID: 8300000, guid: a786e9afffe83b54db65795a3403cb52, type: 3}
-  doorlockSFX: {fileID: 0}
-  noteSFX: {fileID: 8300000, guid: fffb6de2a238a3741ab3307b91fa9fa3, type: 3}
-  grenadeSFX: {fileID: 8300000, guid: d1bef9d95b59ff840adf74176e374ca4, type: 3}
-  dnaSFX: {fileID: 8300000, guid: bda45bafa671d79419c2fd566de991f1, type: 3}
-  audioSource: {fileID: 286894856454229367}
   doorController: {fileID: 0}
-  door: {fileID: 0}
-  grenadeAnimation: {fileID: 0}
-  healthPickupUI: {fileID: 3414478588652616264}
-  healthPickupUIDuration: 3
-  dnaCountText: {fileID: 1877227601636468532}
-  dnaPickupUI: {fileID: 2127155998588273947}
-  dnaPickupUIDuration: 3
 --- !u!114 &8293193583446759392
 MonoBehaviour:
   m_ObjectHideFlags: 0

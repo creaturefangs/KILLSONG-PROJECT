@@ -33,14 +33,16 @@ public class CPlayerMovement : MonoBehaviour
     private bool _canMove = true;
 
     #region Properties
-    public bool GetCanRotate
+    public bool CanRotate
     {
         get { return _canRotate; }
+        set { _canRotate = value; }
     }
 
-    public bool GetCanMove
+    public bool CanMove
     {
         get { return _canMove; }
+        set { _canMove = value; }
     }
     #endregion
     
