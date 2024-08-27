@@ -9,7 +9,7 @@ public class ElectricFence : DamageInstigator
     public float timeSinceLastZap;
     public GameObject zapParticles;
     public float timeToDestroyAfterZap;
-
+    public AudioClip zapSound;
     //TODO: 
     //Setup a timer so that zaps dont spam
     public List<ElectricFenceLaser> lasers;

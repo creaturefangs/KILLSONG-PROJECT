@@ -76,7 +76,25 @@ public class EnvironmentalSoundController : MonoBehaviour
         _audioSource.spatialBlend = 1.0f;
         if (!IsSourcePlaying())
         {
-            _audioSource.PlayOneShot(clip,volumeScale);
+            _audioSource.PlayOneShot(clip, volumeScale);
+        }
+    }
+    
+    /// <summary>
+    /// Play a random sound effect locally(3D) from a specified array at a specified volume level at a specified location
+    /// To play a sound at an objects location, call PlaySoundAtLocation and for last param, use transform.position
+    /// </summary>
+    /// <param name="clip"></param>
+    /// <param name="volumeScale"></param>
+    /// <param name="position"></param>
+    public void PlayRandomSoundAtLocation(AudioClip[] clips, float volumeScale, Vector3 position)
+    {
+        transform.position = position;
+
+        _audioSource.spatialBlend = 1.0f;
+        if (!IsSourcePlaying())
+        {
+            _audioSource.PlayOneShot(clips[Random.Range(0, clips.Length)], volumeScale);
         }
     }
 }

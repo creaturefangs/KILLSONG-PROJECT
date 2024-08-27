@@ -65,7 +65,7 @@ public class DamageInstigator : MonoBehaviour
         while (_inDamageArea)
         {
             damagable.TakeDamageOverTime(damageAmount, damageTickMultiplier);
-            yield return new WaitForSeconds(1.0f / damageTickMultiplier); // Wait for the next tick
+            yield return new WaitForSeconds(1.0f / damageTickMultiplier);
         }
     }
 

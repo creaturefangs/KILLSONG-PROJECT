@@ -209,7 +209,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 43945571}
-  - component: {fileID: 43945570}
   - component: {fileID: 43945569}
   m_Layer: 0
   m_Name: ElectricFenceModel
@@ -230,13 +229,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf875a1578392d4aaa65f62a1d67347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageType: 0
-  isTrigger: 0
+  damageType: 1
+  isTrigger: 1
   disableAfterOneUse: 0
-  canDamage: 0
+  canDamage: 1
   triggerTagCheck: Player
-  damageAmount: 1
-  damageTickMultiplier: 1
+  damageAmount: 8
+  damageTickMultiplier: 3
   onDamageStart:
     m_PersistentCalls:
       m_Calls: []
@@ -244,29 +243,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   timeSinceLastZap: 0
-  zapParticles: {fileID: 0}
-  timeToDestroyAfterZap: 0
---- !u!65 &43945570
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43945568}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1.7, y: 1, z: 0.11}
-  m_Center: {x: -0.3, y: 0, z: 0}
+  zapParticles: {fileID: 1000011396044746, guid: 9b28c4485282efb4c83e9f4c36ec4719, type: 3}
+  timeToDestroyAfterZap: 0.5
+  zapSound: {fileID: 8300000, guid: 9574899355b47364b8ac7c27dfc99af6, type: 3}
+  lasers:
+  - {fileID: 1610111339}
+  - {fileID: 2124161306}
+  - {fileID: 631120946}
+  - {fileID: 871647072}
+  - {fileID: 351289755}
+  - {fileID: 1659584044}
+  - {fileID: 2026515775}
+  - {fileID: 311751135}
 --- !u!4 &43945571
 Transform:
   m_ObjectHideFlags: 0
@@ -276,8 +264,8 @@ Transform:
   m_GameObject: {fileID: 43945568}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.6979413, y: 1.09, z: 25.607965}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 4.6979413, y: 1.47, z: 25.607965}
+  m_LocalScale: {x: 2.0695, y: 2.0695, z: 2.0695}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1610111338}
@@ -1190,7 +1178,7 @@ GameObject:
   - component: {fileID: 139801107}
   - component: {fileID: 139801106}
   m_Layer: 0
-  m_Name: r (6)
+  m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3185,25 +3173,15 @@ MonoBehaviour:
   damageTickMultiplier: 5
   onDamageStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDamageEnd:
     m_PersistentCalls:
       m_Calls: []
   timeSinceLastZap: 0
-  zapParticles: {fileID: 0}
-  timeToDestroyAfterZap: 0
+  zapParticles: {fileID: 1000011396044746, guid: 9b28c4485282efb4c83e9f4c36ec4719, type: 3}
+  timeToDestroyAfterZap: 0.5
+  zapSound: {fileID: 8300000, guid: 9574899355b47364b8ac7c27dfc99af6, type: 3}
+  lasers: []
 --- !u!65 &311751136
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3219,7 +3197,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -3746,25 +3724,15 @@ MonoBehaviour:
   damageTickMultiplier: 5
   onDamageStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDamageEnd:
     m_PersistentCalls:
       m_Calls: []
   timeSinceLastZap: 0
-  zapParticles: {fileID: 0}
-  timeToDestroyAfterZap: 0
+  zapParticles: {fileID: 1000011396044746, guid: 9b28c4485282efb4c83e9f4c36ec4719, type: 3}
+  timeToDestroyAfterZap: 0.5
+  zapSound: {fileID: 8300000, guid: 9574899355b47364b8ac7c27dfc99af6, type: 3}
+  lasers: []
 --- !u!65 &351289756
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3780,7 +3748,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -5489,7 +5457,7 @@ GameObject:
   - component: {fileID: 559890630}
   - component: {fileID: 559890629}
   m_Layer: 0
-  m_Name: r (7)
+  m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5967,25 +5935,15 @@ MonoBehaviour:
   damageTickMultiplier: 5
   onDamageStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDamageEnd:
     m_PersistentCalls:
       m_Calls: []
   timeSinceLastZap: 0
-  zapParticles: {fileID: 0}
-  timeToDestroyAfterZap: 0
+  zapParticles: {fileID: 1000011396044746, guid: 9b28c4485282efb4c83e9f4c36ec4719, type: 3}
+  timeToDestroyAfterZap: 0.5
+  zapSound: {fileID: 8300000, guid: 9574899355b47364b8ac7c27dfc99af6, type: 3}
+  lasers: []
 --- !u!65 &631120947
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6001,7 +5959,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -7468,25 +7426,15 @@ MonoBehaviour:
   damageTickMultiplier: 5
   onDamageStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDamageEnd:
     m_PersistentCalls:
       m_Calls: []
   timeSinceLastZap: 0
-  zapParticles: {fileID: 0}
-  timeToDestroyAfterZap: 0
+  zapParticles: {fileID: 1000011396044746, guid: 9b28c4485282efb4c83e9f4c36ec4719, type: 3}
+  timeToDestroyAfterZap: 0.5
+  zapSound: {fileID: 8300000, guid: 9574899355b47364b8ac7c27dfc99af6, type: 3}
+  lasers: []
 --- !u!65 &871647073
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7502,7 +7450,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -10031,7 +9979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3820780653279365153, guid: e0ed4348d1dd39848bb61a2b375a9964, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.6904547
+      value: 7.36
       objectReference: {fileID: 0}
     - target: {fileID: 3820780653279365153, guid: e0ed4348d1dd39848bb61a2b375a9964, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10122,6 +10070,9 @@ MonoBehaviour:
   onDamageEnd:
     m_PersistentCalls:
       m_Calls: []
+  bearTrapSFX:
+  - {fileID: 8300000, guid: 411fc867e9acf3f4ea5098f4b0151680, type: 3}
+  - {fileID: 8300000, guid: fa0e7197a2f08cf4794ecf03c4fafbff, type: 3}
 --- !u!65 &1146764300
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15239,25 +15190,15 @@ MonoBehaviour:
   damageTickMultiplier: 5
   onDamageStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDamageEnd:
     m_PersistentCalls:
       m_Calls: []
   timeSinceLastZap: 0
-  zapParticles: {fileID: 0}
-  timeToDestroyAfterZap: 0
+  zapParticles: {fileID: 1000011396044746, guid: 9b28c4485282efb4c83e9f4c36ec4719, type: 3}
+  timeToDestroyAfterZap: 0.5
+  zapSound: {fileID: 8300000, guid: 9574899355b47364b8ac7c27dfc99af6, type: 3}
+  lasers: []
 --- !u!65 &1610111340
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15273,7 +15214,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -15947,25 +15888,15 @@ MonoBehaviour:
   damageTickMultiplier: 5
   onDamageStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDamageEnd:
     m_PersistentCalls:
       m_Calls: []
   timeSinceLastZap: 0
-  zapParticles: {fileID: 0}
-  timeToDestroyAfterZap: 0
+  zapParticles: {fileID: 1000011396044746, guid: 9b28c4485282efb4c83e9f4c36ec4719, type: 3}
+  timeToDestroyAfterZap: 0.5
+  zapSound: {fileID: 8300000, guid: 9574899355b47364b8ac7c27dfc99af6, type: 3}
+  lasers: []
 --- !u!65 &1659584045
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15981,7 +15912,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -18603,25 +18534,15 @@ MonoBehaviour:
   damageTickMultiplier: 5
   onDamageStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDamageEnd:
     m_PersistentCalls:
       m_Calls: []
   timeSinceLastZap: 0
-  zapParticles: {fileID: 0}
-  timeToDestroyAfterZap: 0
+  zapParticles: {fileID: 1000011396044746, guid: 9b28c4485282efb4c83e9f4c36ec4719, type: 3}
+  timeToDestroyAfterZap: 0.5
+  zapSound: {fileID: 8300000, guid: 9574899355b47364b8ac7c27dfc99af6, type: 3}
+  lasers: []
 --- !u!65 &2026515776
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18637,7 +18558,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -19887,25 +19808,15 @@ MonoBehaviour:
   damageTickMultiplier: 5
   onDamageStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDamageEnd:
     m_PersistentCalls:
       m_Calls: []
   timeSinceLastZap: 0
-  zapParticles: {fileID: 0}
-  timeToDestroyAfterZap: 0
+  zapParticles: {fileID: 1000011396044746, guid: 9b28c4485282efb4c83e9f4c36ec4719, type: 3}
+  timeToDestroyAfterZap: 0.5
+  zapSound: {fileID: 8300000, guid: 9574899355b47364b8ac7c27dfc99af6, type: 3}
+  lasers: []
 --- !u!65 &2124161307
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19921,7 +19832,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

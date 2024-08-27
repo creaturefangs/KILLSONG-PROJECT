@@ -111,6 +111,3 @@ public class CPlayerMovement : MonoBehaviour
         playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, newFOV, Time.deltaTime * zoomSensitivity);
     }
 }
-
-
-

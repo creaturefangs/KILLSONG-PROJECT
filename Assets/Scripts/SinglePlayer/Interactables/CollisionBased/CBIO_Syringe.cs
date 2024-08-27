@@ -3,7 +3,7 @@ public class CBIO_Syringe : Healable
 {   
     [SerializeField] private AudioClip healthPickupSFX;
 
-    private new void Start()
+    private void Start()
     {
         onInteractionEvent.AddListener(() => EnvironmentalSoundController.Instance.PlaySound2D(healthPickupSFX, 1.0f));
     }

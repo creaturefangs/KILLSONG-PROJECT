@@ -1,12 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ElectricFenceLaser : ElectricFence
 {
-    private void OnTriggerEnter2D(Collider2D other)
+    private new void OnTriggerEnter(Collider other)
     {
-        throw new NotImplementedException();
+        if (!other.CompareTag(triggerTagCheck)) return;
+        
+        EnvironmentalSoundController.Instance.PlaySoundAtLocation(base.zapSound, 1.0f, other.transform.position);
     }
 }
