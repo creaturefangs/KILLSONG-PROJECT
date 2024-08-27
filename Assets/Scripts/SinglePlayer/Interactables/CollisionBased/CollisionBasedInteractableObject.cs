@@ -12,6 +12,7 @@ public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
     [Tooltip("Should this interactable get destroyed on interaction?")]
     public bool destroyOnInteraction;
     [Tooltip("Set if this object can be interacted with.")]
+    [HideInInspector]
     public bool canInteract = false;
     [Tooltip("Tag to check for trigger events, default is Player.")]
     public string triggerObjectTagCheck = "Player";

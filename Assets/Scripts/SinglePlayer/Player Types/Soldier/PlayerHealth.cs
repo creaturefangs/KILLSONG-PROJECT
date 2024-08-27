@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, IDamagable
 {
     public float maxHealth = 100;
     public float currentHealth;
@@ -33,13 +33,6 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         UpdateDamage();
-    }
-
-    public void TakeDamage(int amount)
-    {
-        
-            currentHealth -= amount;
-            if (currentHealth <= 0) { Die(); }
     }
 
     void UpdateDamage()
@@ -99,25 +92,31 @@ public class PlayerHealth : MonoBehaviour
 
     void Respawn()
     {
-        // Implement your respawn logic here
-        // For example, teleport the player to a spawn point
-        // ...
+        
     }
 
+    public void TakeDamage(float amount)
+    {
+        if (currentHealth > 0)
+        {
+            currentHealth -= amount;
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+        }
+    }
+    
+    public void TakeDamageOverTime(float amount, float tickMultiplier)
+    {
+        if (currentHealth > 0)
+        {
+            currentHealth -= amount * (Time.deltaTime * tickMultiplier);
 
-    // Example usage
-    // public void OnTriggerEnter(Collider other)
-    //{
-    //if (other.CompareTag("Enemy"))
-    //{
-    // if (other.gameObject.name == "BearTrap")
-    //{
-    //TakeDamage(25);
-    //other.gameObject.GetComponent<Animator>().Play("beartrapclose");
-    //GameObject.Find("beartrapSFX").GetComponent<AudioSource>().Play();
-    //other.gameObject.tag = "Untagged";
-    //}
-    // }
-    //}
-
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+        }
+    }
 }

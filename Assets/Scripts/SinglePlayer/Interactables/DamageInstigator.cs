@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,17 +13,17 @@ public class DamageInstigator : MonoBehaviour
     public bool isTrigger;
     public bool disableAfterOneUse;
     public bool canDamage = true;
-    //What tag should the other object have to inflict damage?
+
     public string triggerTagCheck = "Player";
-    //How much damage should be inflicted?
     public float damageAmount = 1.0f;
-    //How many times should the damage happen per second?
     public float damageTickMultiplier = 1.0f;
     
     private bool _inDamageArea;
+    private Coroutine _damageCoroutine;
 
     public UnityEvent onDamageStart;
     public UnityEvent onDamageEnd;
+
     public void OnTriggerEnter(Collider other)
     {
         if (!other.gameObject.CompareTag(triggerTagCheck)) return;
@@ -40,9 +41,11 @@ public class DamageInstigator : MonoBehaviour
                     damagable.TakeDamage(damageAmount);
                     break;
                 case DamageType.OverTime:
-                    damagable.TakeDamageOverTime(damageAmount, damageTickMultiplier);
+                    if (_damageCoroutine == null)
+                    {
+                        _damageCoroutine = StartCoroutine(ApplyDamageOverTime(damagable));
+                    }
                     break;
-                //Default to instant damage
                 default:
                     damagable.TakeDamage(damageAmount);
                     break;
@@ -57,6 +60,15 @@ public class DamageInstigator : MonoBehaviour
         }
     }
 
+    private IEnumerator ApplyDamageOverTime(IDamagable damagable)
+    {
+        while (_inDamageArea)
+        {
+            damagable.TakeDamageOverTime(damageAmount, damageTickMultiplier);
+            yield return new WaitForSeconds(1.0f / damageTickMultiplier); // Wait for the next tick
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if (!other.gameObject.CompareTag(triggerTagCheck)) return;
@@ -64,9 +76,13 @@ public class DamageInstigator : MonoBehaviour
         if (isTrigger)
         {
             _inDamageArea = false;
+            if (_damageCoroutine != null)
+            {
+                StopCoroutine(_damageCoroutine);
+                _damageCoroutine = null;
+            }
         
             onDamageEnd?.Invoke();
-            
         }
         
         if (disableAfterOneUse)
