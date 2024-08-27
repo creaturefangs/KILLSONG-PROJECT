@@ -49,7 +49,7 @@ public class PlayerUI : MonoBehaviour
         }
 
         interactionText.text = displayText;
-        Debug.Log("Interaction text set to: " + displayText);
+        //Debug.Log("Interaction text set to: " + displayText);
 
         // Update the layout so the text info is ready to be used
         interactionText.ForceMeshUpdate();
@@ -94,7 +94,7 @@ public class PlayerUI : MonoBehaviour
     public void ClearInteractionDisplay()
     {
         interactionText.text = "";
-        Debug.Log("Interaction display cleared.");
+        //Debug.Log("Interaction display cleared.");
 
         interactionKeyImage.SetActive(false);
         interactionProgressImage.gameObject.SetActive(false);

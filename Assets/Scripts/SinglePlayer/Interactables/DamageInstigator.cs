@@ -3,10 +3,20 @@ using UnityEngine.Events;
 
 public class DamageInstigator : MonoBehaviour
 {
+    public enum DamageType
+    {
+        Instant,
+        OverTime
+    }
+    public DamageType damageType;
+    public bool isTrigger;
+    public bool disableAfterOneUse;
+    public bool canDamage = true;
     //What tag should the other object have to inflict damage?
     public string triggerTagCheck = "Player";
-    public bool applyDamageOverTime;
+    //How much damage should be inflicted?
     public float damageAmount = 1.0f;
+    //How many times should the damage happen per second?
     public float damageTickMultiplier = 1.0f;
     
     private bool _inDamageArea;
@@ -17,29 +27,51 @@ public class DamageInstigator : MonoBehaviour
     {
         if (!other.gameObject.CompareTag(triggerTagCheck)) return;
 
-        IDamagable damagable = other.gameObject.GetComponent<IDamagable>();
-        _inDamageArea = true;
+        if (isTrigger && canDamage)
+        {
+            IDamagable damagable = other.gameObject.GetComponent<IDamagable>();
+            _inDamageArea = true;
 
-        if (damagable == null || !_inDamageArea) return;
-        
-        if (applyDamageOverTime)
-        {
-            damagable.TakeDamageOverTime(damageAmount, damageTickMultiplier); 
+            if (damagable == null || !_inDamageArea) return;
+
+            switch(damageType)
+            {
+                case DamageType.Instant:
+                    damagable.TakeDamage(damageAmount);
+                    break;
+                case DamageType.OverTime:
+                    damagable.TakeDamageOverTime(damageAmount, damageTickMultiplier);
+                    break;
+                //Default to instant damage
+                default:
+                    damagable.TakeDamage(damageAmount);
+                    break;
+            }
+
+            onDamageStart?.Invoke();
         }
-        else
-        {
-            damagable.TakeDamage(damageAmount);
-        }
         
-        onDamageStart?.Invoke();
+        if (disableAfterOneUse)
+        {
+            canDamage = false;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (!other.gameObject.CompareTag(triggerTagCheck)) return;
+
+        if (isTrigger)
+        {
+            _inDamageArea = false;
         
-        _inDamageArea = false;
+            onDamageEnd?.Invoke();
+            
+        }
         
-        onDamageEnd?.Invoke();
+        if (disableAfterOneUse)
+        {
+            canDamage = false;
+        }
     }
 }

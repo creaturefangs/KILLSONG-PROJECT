@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Grenade : DamageInstigator
@@ -15,7 +13,7 @@ public class Grenade : DamageInstigator
     //     other.gameObject.SetActive(false);
     //     Debug.Log("Collision with grenade");
     
-    private void PlayExplosion()
+    public void PlayExplosion()
     {
         // Check if the grenade animation and explosion sound are assigned
         if (grenadeAnimation != null && grenadeSFX != null)
