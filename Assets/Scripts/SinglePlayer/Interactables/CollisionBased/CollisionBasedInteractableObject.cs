@@ -7,6 +7,8 @@ public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
     
     [Tooltip("Interaction Event.")]
     public UnityEvent onInteractionEvent;
+    [Tooltip("End Interaction Event.")]
+    public UnityEvent onEndInteractionEvent;
     [Tooltip("Is this item a pickup?")]
     public bool isPickup;
     [Tooltip("Should this interactable get destroyed on interaction?")]
@@ -19,13 +21,12 @@ public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
     
     [HideInInspector]
     public GameObject player;
-    [HideInInspector]
-    private PlayerUI playerUI;
+    private PlayerUI _playerUI;
 
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
-        playerUI = FindObjectOfType<PlayerUI>();
+        _playerUI = FindObjectOfType<PlayerUI>();
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -35,7 +36,7 @@ public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
         player.GetComponent<PlayerInteractableController>().currentInteractableObject = this;
        
         //Display interaction in UI
-        playerUI.DisplayInteractionUI(KeyCode.E, interactableData.interactionType, interactableData.interactableStruct);
+        _playerUI.DisplayInteractionUI(KeyCode.E, interactableData.interactionType, interactableData.interactableStruct);
     }
 
     public void OnTriggerExit(Collider other)
@@ -46,7 +47,9 @@ public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
         player.GetComponent<PlayerInteractableController>().currentInteractableObject = null;
 
         //Clear interaction UI
-        playerUI.ClearInteractionDisplay();
+        _playerUI.ClearInteractionDisplay();
+        
+        onEndInteractionEvent?.Invoke();
     }
 
     public void Interact()

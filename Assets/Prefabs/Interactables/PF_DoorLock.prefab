@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 4485955302278927334}
   - component: {fileID: 4545942937377148375}
   m_Layer: 3
-  m_Name: Button (1)
+  m_Name: Button02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -362,18 +362,18 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2046411030237840850}
-  - {fileID: 35203631421744333}
-  - {fileID: 140824982921500971}
-  - {fileID: 5729825928508627472}
-  - {fileID: 6812298851578596079}
-  - {fileID: 8728273520391710033}
-  - {fileID: 6933232669467695816}
-  - {fileID: 431178490247269397}
-  - {fileID: 4729749189607442715}
-  - {fileID: 2963514133206570040}
-  - {fileID: 423964900444053777}
-  - {fileID: 7569764890905535122}
   - {fileID: 9180811718350688382}
+  - {fileID: 6812298851578596079}
+  - {fileID: 4729749189607442715}
+  - {fileID: 35203631421744333}
+  - {fileID: 8728273520391710033}
+  - {fileID: 2963514133206570040}
+  - {fileID: 140824982921500971}
+  - {fileID: 6933232669467695816}
+  - {fileID: 423964900444053777}
+  - {fileID: 5729825928508627472}
+  - {fileID: 431178490247269397}
+  - {fileID: 7569764890905535122}
   - {fileID: 5732785218854882567}
   - {fileID: 1741368089934352785}
   m_Father: {fileID: 53797306414835857}
@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 4481357003543946502}
   - component: {fileID: 479018649298346006}
   m_Layer: 3
-  m_Name: Button (9)
+  m_Name: Button00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -823,7 +823,7 @@ GameObject:
   - component: {fileID: 6617082608236947111}
   - component: {fileID: 1553149530608391297}
   m_Layer: 3
-  m_Name: Button (6)
+  m_Name: Button07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1614,7 +1614,7 @@ GameObject:
   - component: {fileID: 4362908057938804582}
   - component: {fileID: 1567341870248975855}
   m_Layer: 3
-  m_Name: Button (11)
+  m_Name: Button*
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1735,7 +1735,7 @@ GameObject:
   - component: {fileID: 3235178015935111756}
   - component: {fileID: 506056419935662214}
   m_Layer: 3
-  m_Name: Button
+  m_Name: Button01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1855,9 +1855,10 @@ GameObject:
   - component: {fileID: 5112163899172943553}
   - component: {fileID: 8359555974287944939}
   - component: {fileID: 1940893344634304966}
+  - component: {fileID: 5361595538181979546}
   m_Layer: 0
   m_Name: PF_DoorLock
-  m_TagString: DoorLock
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1949,6 +1950,56 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.4789276, y: 1, z: 1}
   m_Center: {x: 1.2394646, y: 0, z: 0}
+--- !u!114 &5361595538181979546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3821863216924628902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226fbc1c89a2062498f226e3912885a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableData: {fileID: 11400000, guid: 83d254a7ed57b2e48a8a0702074504a4, type: 2}
+  onInteractionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5361595538181979546}
+        m_TargetAssemblyTypeName: CBIO_DoorLock, Assembly-CSharp
+        m_MethodName: HandleDoorLock
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onEndInteractionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5361595538181979546}
+        m_TargetAssemblyTypeName: CBIO_DoorLock, Assembly-CSharp
+        m_MethodName: HandleDoorLock
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  isPickup: 0
+  destroyOnInteraction: 0
+  canInteract: 0
+  triggerObjectTagCheck: Player
+  player: {fileID: 0}
+  doorLockPanel: {fileID: 7859575729372214317}
+  doorLockSFX: {fileID: 8300000, guid: 1789e6fba90ba074d9a2346106b6b402, type: 3}
 --- !u!1 &3912456415650940137
 GameObject:
   m_ObjectHideFlags: 0
@@ -2096,7 +2147,7 @@ GameObject:
   - component: {fileID: 6350375275951456164}
   - component: {fileID: 4523224201826214079}
   m_Layer: 3
-  m_Name: Button (8)
+  m_Name: Button08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2217,7 +2268,7 @@ GameObject:
   - component: {fileID: 2824957618642858006}
   - component: {fileID: 1084172475678652331}
   m_Layer: 3
-  m_Name: Button (4)
+  m_Name: Button04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2413,7 +2464,7 @@ GameObject:
   - component: {fileID: 1088375881528290298}
   - component: {fileID: 7333247151992270370}
   m_Layer: 3
-  m_Name: Button (3)
+  m_Name: Button05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2534,7 +2585,7 @@ GameObject:
   - component: {fileID: 2087384758372606042}
   - component: {fileID: 1262989424977062770}
   m_Layer: 3
-  m_Name: Button (7)
+  m_Name: Button09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3057,7 +3108,7 @@ GameObject:
   - component: {fileID: 5539312506827364340}
   - component: {fileID: 2526900444964899310}
   m_Layer: 3
-  m_Name: Button (10)
+  m_Name: Button#
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3178,7 +3229,7 @@ GameObject:
   - component: {fileID: 3089845566684076052}
   - component: {fileID: 4205421212869870526}
   m_Layer: 3
-  m_Name: Button (2)
+  m_Name: Button03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3476,7 +3527,7 @@ GameObject:
   - component: {fileID: 5774528281910787496}
   - component: {fileID: 4923984413305661293}
   m_Layer: 3
-  m_Name: Button
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3584,7 +3635,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 877086444959526007}
+      - m_Target: {fileID: 7859575729372214317}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -3743,7 +3794,7 @@ GameObject:
   - component: {fileID: 8247662054110677370}
   - component: {fileID: 1624129999148104131}
   m_Layer: 3
-  m_Name: Button (5)
+  m_Name: Button06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

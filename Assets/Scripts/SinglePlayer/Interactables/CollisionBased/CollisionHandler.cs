@@ -76,32 +76,7 @@ public class CollisionHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("DamageBox"))
-        {
-            // Apply damage to the player
-            //ApplyDamage(other.gameObject);
-            // Disable the damage box collider
-            other.gameObject.SetActive(false);
-            Debug.Log("Collision with damage box");
-            //audio feedback is handled in player health script 
-        }
-        else if (other.CompareTag("DamageArea"))
-        {
-            // Set flag to indicate that the player is in a damage area
-            isInDamageArea = true;
-            Debug.Log("Entered damage area");
-        }
-
-        else if (other.CompareTag("DoorLock"))
-        {
-            doorlockPanel.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            Debug.Log("entered doorlock");
-            //audio feedback
-            audioSource.PlayOneShot(doorlockSFX, volume);
-        }
-        else if (other.CompareTag("Notes"))
+        if (other.CompareTag("Notes"))
         {
             noteTxt.SetActive(true);
             Debug.Log("note collision");
@@ -132,43 +107,16 @@ public class CollisionHandler : MonoBehaviour
         }
     }
     private void OnTriggerExit(Collider other)
-        {
-            if (other.CompareTag("DamageArea"))
-            {
-                // Reset flag when the player exits the damage area
-                isInDamageArea = false;
-                Debug.Log("Exited damage area");
-            }
-            else if (other.CompareTag("DoorLock"))
-            {
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
-                doorlockPanel.SetActive(false);
-                Debug.Log("Exited doorlock");
-            }
-            else if (other.CompareTag("Notes"))
-            {
-                noteTxt.SetActive(false);
-            }
-            else if (other.CompareTag("SlowSurface"))
-            {
-                // Reduce player's movement speed
-                playerMovement.speed = 5f;
-                Debug.Log("Exit collision with slowing object");
-            }
-        }
-
-        // Apply damage to the player
-    private void ApplyDamage(GameObject target)
     {
-        // Check if the player has a health component
-        if (playerHealth != null)
+        if (other.CompareTag("Notes"))
         {
-            playerHealth.TakeDamage(damageAmount);
+            noteTxt.SetActive(false);
         }
-        else
+        else if (other.CompareTag("SlowSurface"))
         {
-            Debug.LogWarning("No CPlayerHealth component found on player object. Damage not applied.");
+            // Reduce player's movement speed
+            playerMovement.speed = 5f;
+            Debug.Log("Exit collision with slowing object");
         }
-    }    
+    }   
 }
