@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SO_Note
   m_EditorClassIdentifier: 
   interactableStruct:
-    interactableName: Syringe
+    interactableName: Note
     uiImage: {fileID: 0}
     uiImageSize: {x: 0, y: 0}
   interactionType: 2
-  interactionHoldDuration: 2
+  interactionHoldDuration: 1
