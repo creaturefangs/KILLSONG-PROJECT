@@ -4851,7 +4851,7 @@ GameObject:
   - component: {fileID: 7339383312596888754}
   - component: {fileID: 7592972614198233718}
   m_Layer: 0
-  m_Name: flare
+  m_Name: PF_flare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7018856115225079575}
   - component: {fileID: -7520726242499113739}
   m_Layer: 0
-  m_Name: BactaTank
+  m_Name: PF_BactaTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
