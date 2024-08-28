@@ -1,23 +1,27 @@
+using System.Collections;
 using UnityEngine;
 
 public class CBIO_Door : CollisionBasedInteractableObject
 {
     private Animator _doorAnimator;
     public int requiredKeyID;
-    private PlayerInventory _playerInventory;
     private bool _opened;
-    private void ToggleDoor()
+    private bool _onCooldown;
+    private const float CooldownTime = 2.0f;
+
+    private new void Awake()
     {
-        if (_playerInventory.GetInventoryItemById(PlayerInventory.InventoryTypes.Hidden, requiredKeyID))
+        base.Awake();
+        _doorAnimator = GetComponentInParent<Animator>();
+    }
+    public void ToggleDoor()
+    {
+        if (playerInventory.GetInventoryItemById(PlayerInventory.InventoryTypes.Hidden, requiredKeyID))
         {
-            switch(_opened)
+            if (!_onCooldown)
             {
-                case false:
-                    _doorAnimator.SetBool("DoorOpen", true);
-                    break;
-                case true:
-                    _doorAnimator.SetBool("DoorOpen", false);
-                    break;
+                _doorAnimator.SetBool("DoorOpen", !_opened);
+                StartCoroutine(DoorCooldown());
             }
         }
         else
@@ -26,8 +30,10 @@ public class CBIO_Door : CollisionBasedInteractableObject
         }
     }
 
-    private void CloseDoor()
+    private IEnumerator DoorCooldown()
     {
-        
+        _onCooldown = true;
+        yield return new WaitForSeconds(CooldownTime);
+        _onCooldown = false;
     }
 }

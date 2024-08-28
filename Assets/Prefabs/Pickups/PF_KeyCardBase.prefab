@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 5695578335006022154}
   - component: {fileID: 5679034191756788747}
   - component: {fileID: 6259613701991463121}
+  - component: {fileID: 4989693005181176554}
+  - component: {fileID: 1287847264036529573}
   m_Layer: 0
-  m_Name: PF_KeyCard
+  m_Name: PF_KeyCardBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038027236953289655}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14.558896, y: 1.4457, z: -3.601369}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -104,8 +106,46 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.14999999, y: 0.0074587134, z: 0.21842524}
+  m_Size: {x: 0.4, y: 0.4, z: 0.4}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4989693005181176554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038027236953289655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f648a180044c8d438d439e1d7b7901c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableData: {fileID: 0}
+  onInteractionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onEndInteractionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isPickup: 0
+  destroyOnInteraction: 0
+  canInteract: 0
+  triggerObjectTagCheck: Player
+  player: {fileID: 0}
+  playerInventory: {fileID: 0}
+--- !u!114 &1287847264036529573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038027236953289655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b6681996f91637469c1fadaad40482c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryItem: {fileID: 0}
 --- !u!1 &5883440839685671141
 GameObject:
   m_ObjectHideFlags: 0

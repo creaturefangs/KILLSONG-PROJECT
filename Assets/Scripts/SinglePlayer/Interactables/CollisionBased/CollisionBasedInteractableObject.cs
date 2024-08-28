@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
 {
@@ -21,11 +22,14 @@ public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
     
     [HideInInspector]
     public GameObject player;
+    [HideInInspector]
+    public PlayerInventory playerInventory;
     private PlayerUI _playerUI;
-
-    private void Awake()
+    
+    public void Awake()
     {
         player = GameObject.FindWithTag("Player");
+        playerInventory = FindObjectOfType<PlayerInventory>();
         _playerUI = FindObjectOfType<PlayerUI>();
     }
     public void OnTriggerEnter(Collider other)

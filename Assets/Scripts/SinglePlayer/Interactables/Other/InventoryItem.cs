@@ -1,14 +1,16 @@
-using System;
 using UnityEngine;
 
 public class InventoryItem : MonoBehaviour
 {
+    private CollisionBasedInteractableObject _interactableObject;
     public SO_InventoryItem inventoryItem;
     private PlayerInventory _playerInventory;
-
+    
     private void Awake()
     {
         _playerInventory = FindObjectOfType<PlayerInventory>();
+        _interactableObject = GetComponent<CollisionBasedInteractableObject>();
+        _interactableObject.onInteractionEvent.AddListener(AddToInventory);
     }
 
     public void AddToInventory()
