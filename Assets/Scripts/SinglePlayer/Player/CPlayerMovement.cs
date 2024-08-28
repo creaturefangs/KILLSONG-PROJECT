@@ -21,6 +21,9 @@ public class CPlayerMovement : MonoBehaviour
     [SerializeField] private int maxJumps = 2; // Maximum number of jumps (e.g., 2 for double jump)
     [SerializeField] private LayerMask groundLayer; // Layer mask to identify ground
 
+    //for 360 degree cam rotation
+    [SerializeField] private Transform cameraFollowTarget;
+    
     private Rigidbody rb;
     private Camera playerCamera;
     private Vector3 movement;
@@ -119,6 +122,12 @@ public class CPlayerMovement : MonoBehaviour
         }
     }
 
+    void LateUpdate()
+    {
+        if(_canRotate)
+            CameraRotation();
+    }
+
     void PerformMovement(Vector3 move)
     {
         rb.MovePosition(rb.position + transform.TransformDirection(move) * Time.fixedDeltaTime);
@@ -147,6 +156,11 @@ public class CPlayerMovement : MonoBehaviour
 
         //for smoother zooming - Alden
         playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, newFOV, Time.deltaTime * zoomSensitivity);
+    }
+
+    private void CameraRotation()
+    {
+        cameraFollowTarget.rotation = Quaternion.identity;
     }
 
     public void ToggleMovement()
