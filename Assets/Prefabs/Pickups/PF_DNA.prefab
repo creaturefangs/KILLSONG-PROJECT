@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 194447630815429155}
   - component: {fileID: 4316435774373816102}
   m_Layer: 0
-  m_Name: DNA
+  m_Name: PF_DNA
   m_TagString: DNA
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

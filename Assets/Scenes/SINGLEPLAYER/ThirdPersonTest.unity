@@ -4819,6 +4819,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorLock
       objectReference: {fileID: 0}
+    - target: {fileID: 5361595538181979546, guid: b00789d054dc3b34d9b9c7f0cebb2b4b, type: 3}
+      propertyPath: doorLockSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b01f786966baa343bcc2a9979ea8829, type: 3}
     - target: {fileID: 6657818116733160467, guid: b00789d054dc3b34d9b9c7f0cebb2b4b, type: 3}
       propertyPath: m_Camera
       value: 

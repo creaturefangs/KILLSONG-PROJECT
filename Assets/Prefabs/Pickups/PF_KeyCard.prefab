@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5679034191756788747}
   - component: {fileID: 6259613701991463121}
   m_Layer: 0
-  m_Name: SecurityCard
+  m_Name: PF_KeyCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
