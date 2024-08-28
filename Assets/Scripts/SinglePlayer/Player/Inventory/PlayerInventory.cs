@@ -34,7 +34,14 @@ public class PlayerInventory : MonoBehaviour
     {
         _inventoryItems[type].Remove(item);
     }
-
+    
+    
+    /// <summary>
+    /// Returns true if the specified inventory type contains the specified itemID
+    /// </summary>
+    /// <param name="type - Inventory Type"></param>
+    /// <param name="itemID - ItemID"></param>
+    /// <returns></returns>
     public bool GetInventoryItemById(InventoryTypes type, int itemID)
     {
         if (_inventoryItems.TryGetValue(type, out var inventoryItem))
