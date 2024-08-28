@@ -16374,8 +16374,41 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1707575820529203866, guid: ecb73dce1183e5849b6d85e203921ab7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1739646978}
   m_SourcePrefab: {fileID: 100100000, guid: ecb73dce1183e5849b6d85e203921ab7, type: 3}
+--- !u!1 &1739646977 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1707575820529203866, guid: ecb73dce1183e5849b6d85e203921ab7, type: 3}
+  m_PrefabInstance: {fileID: 1739646976}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1739646978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739646977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc87cf1fd1586e744be7f52f313d2559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableData: {fileID: 0}
+  onInteractionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onEndInteractionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isPickup: 0
+  destroyOnInteraction: 0
+  canInteract: 0
+  triggerObjectTagCheck: Player
+  player: {fileID: 0}
+  requiredKeyID: 0
 --- !u!4 &1750331166 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4024512162213965657, guid: e58bf60a2d3e48d408eaa05220b8af10, type: 3}

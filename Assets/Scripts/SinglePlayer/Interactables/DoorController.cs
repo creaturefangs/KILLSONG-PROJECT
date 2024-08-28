@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorController : MonoBehaviour
+public class DoorController : CollisionBasedInteractableObject
 {
-    // Start is called before the first frame update
-    void Start()
+    private Animator _doorAnimator;
+    public int requiredKeyID;
+    private PlayerInventory _playerInventory;
+    
+    private void OpenDoor()
     {
-        
+        if (_playerInventory.GetInventoryItemById(PlayerInventory.InventoryTypes.Hidden, requiredKeyID))
+        {
+            
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void CloseDoor()
     {
-        
+        _doorAnimator.SetBool("Opened", false);
     }
 }
