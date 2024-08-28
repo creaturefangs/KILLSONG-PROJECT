@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 public class CBIO_Note : CollisionBasedInteractableObject
@@ -8,9 +7,8 @@ public class CBIO_Note : CollisionBasedInteractableObject
     [SerializeField] private GameObject noteCanvas;
     [SerializeField] private GameObject fileOpenButton;
     [SerializeField] private KeyCode escapeNoteKey;
-    public AudioClip noteSFX;
+    [SerializeField] private AudioClip noteSFX;
     
-    private bool _hoveringFile;
     private CPlayerMovement _playerMovement;
     private void Start()
     {
@@ -38,8 +36,6 @@ public class CBIO_Note : CollisionBasedInteractableObject
 
     public void HandleNoteActivationButton()
     {
-        Debug.Log("hey");
-        _hoveringFile = true;
         noteImage.gameObject.SetActive(true);
         note.locked = false;
         Destroy(fileOpenButton);
@@ -58,7 +54,6 @@ public class CBIO_Note : CollisionBasedInteractableObject
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            //_playerMovement.CanMove = false;
             _playerMovement.CanRotate = false;
 
             EnvironmentalSoundController.Instance.PlaySound2D(noteSFX, 1.0f);
@@ -67,7 +62,6 @@ public class CBIO_Note : CollisionBasedInteractableObject
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            //_playerMovement.CanMove = true;
             _playerMovement.CanRotate = true;
         }
     }

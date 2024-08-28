@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 6580566049811631614}
   - component: {fileID: 6135731785611677607}
   m_Layer: 0
-  m_Name: PF_File
+  m_Name: PF_Note
   m_TagString: Notes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
