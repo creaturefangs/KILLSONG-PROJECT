@@ -3,18 +3,15 @@ using UnityEngine.Events;
 
 public class Surface : CollisionBasedInteractableObject
 {
-    public UnityEvent onEnterSurface;
-    public UnityEvent onExitSurface;
-    public void OnTriggerStay(Collider other)
+    [HideInInspector] public float originalPlayerWalkSpeed;
+    [HideInInspector] public float originalPlayerSprintSpeed;
+    public float surfaceSpeedValueMultiplier = .5f;
+
+    private new void Awake()
     {
-        if (!other.CompareTag(triggerObjectTagCheck)) return;
+        base.Awake();
         
-        onEnterSurface?.Invoke();
+        originalPlayerWalkSpeed = playerMovement.walkSpeed;
+        originalPlayerSprintSpeed = playerMovement.sprintSpeed;
     }
-    // public new void OnTriggerExit(Collider other)
-    // {
-    //     base.OnTriggerExit(other);
-    //     
-    //     onExitSurface?.Invoke();
-    // }
 }

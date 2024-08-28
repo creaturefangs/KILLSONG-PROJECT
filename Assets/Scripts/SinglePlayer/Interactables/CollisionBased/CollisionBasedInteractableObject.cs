@@ -24,12 +24,15 @@ public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
     public GameObject player;
     [HideInInspector]
     public PlayerInventory playerInventory;
+    [HideInInspector]
+    public CPlayerMovement playerMovement; 
     private PlayerUI _playerUI;
     
     public void Awake()
     {
         player = GameObject.FindWithTag("Player");
         playerInventory = FindObjectOfType<PlayerInventory>();
+        playerMovement = FindObjectOfType<CPlayerMovement>();
         _playerUI = FindObjectOfType<PlayerUI>();
     }
     public void OnTriggerEnter(Collider other)

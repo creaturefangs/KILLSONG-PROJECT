@@ -8,7 +8,7 @@ public class CollisionHandler : MonoBehaviour
         if (other.CompareTag("SlowSurface"))
         {
             // Reduce player's movement speed
-            playerMovement.speed = 1f;
+            playerMovement.walkSpeed = 1f;
             Debug.Log("Collision with slowing object");
         }
     }
@@ -17,7 +17,7 @@ public class CollisionHandler : MonoBehaviour
         if (other.CompareTag("SlowSurface"))
         {
             // Reduce player's movement speed
-            playerMovement.speed = 5f;
+            playerMovement.walkSpeed = 5f;
             Debug.Log("Exit collision with slowing object");
         }
     }   

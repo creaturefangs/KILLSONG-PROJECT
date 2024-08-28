@@ -1,18 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CPlayerMovement : MonoBehaviour
 {
-    public enum MovementTypes
-    {
-        Slow,
-        Normal
-    }
-    public MovementTypes movementType;
-    public float speed = 5f; // Movement speed
-   
-    [SerializeField] private float sprintSpeed = 10f; // Sprinting speed
+    public float walkSpeed = 5f; // Movement speed
+    public float sprintSpeed = 10f; // Sprinting speed
     [SerializeField] private float jumpForce = 5f; // Jump force
     [SerializeField] private float mouseSensitivity = 2f; // Mouse sensitivity
     [SerializeField] private float zoomSensitivity = 15f; // Zoom sensitivity
@@ -22,15 +14,14 @@ public class CPlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer; // Layer mask to identify ground
 
     //for 360 degree cam rotation
-    [SerializeField] private Transform cameraFollowTarget;
-    
-    private Rigidbody rb;
-    private Camera playerCamera;
-    private Vector3 movement;
-    private float mouseX, mouseY;
-    private bool isSprinting = false;
-    private int jumpCount = 0;
-    private float distanceToGround;
+
+    private Rigidbody _rb;
+    private Camera _playerCamera;
+    private Vector3 _movement;
+    private float _mouseX, _mouseY;
+    public bool isSprinting = false;
+    private int _jumpCount = 0;
+    private float _distanceToGround;
 
     private bool _canRotate = true;
     private bool _canMove = true;
@@ -38,25 +29,24 @@ public class CPlayerMovement : MonoBehaviour
     #region Properties
     public bool CanRotate
     {
-        get { return _canRotate; }
-        set { _canRotate = value; }
+        get => _canRotate;
+        set => _canRotate = value;
     }
 
     public bool CanMove
     {
-        get { return _canMove; }
-        set { _canMove = value; }
+        get => _canMove;
+        set => _canMove = value;
     }
     #endregion
     
-    
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        playerCamera = GetComponentInChildren<Camera>(); // Assuming the camera is a child of the player
+        _rb = GetComponent<Rigidbody>();
+        _playerCamera = GetComponentInChildren<Camera>(); // Assuming the camera is a child of the player
         Cursor.lockState = CursorLockMode.Locked; // Lock cursor to center of screen
 
-        distanceToGround = GetComponent<Collider>().bounds.extents.y; // Calculate distance from center to the bottom of the collider
+        _distanceToGround = GetComponent<Collider>().bounds.extents.y; // Calculate distance from center to the bottom of the collider
     }
 
     void Update()
@@ -74,12 +64,12 @@ public class CPlayerMovement : MonoBehaviour
             // Check if there's any movement input
             if (horizontalInput != 0 || verticalInput != 0)
             {
-                float currentSpeed = isSprinting ? sprintSpeed : speed;
-                movement = new Vector3(horizontalInput, 0f, verticalInput).normalized * currentSpeed;
+                float currentSpeed = isSprinting ? sprintSpeed : walkSpeed;
+                _movement = new Vector3(horizontalInput, 0f, verticalInput).normalized * currentSpeed;
             }
             else
             {
-                movement = Vector3.zero; // No movement input, reset movement vector
+                _movement = Vector3.zero; // No movement input, reset movement vector
             }
         }
         #endregion
@@ -87,13 +77,13 @@ public class CPlayerMovement : MonoBehaviour
         if (_canRotate)
         {
             // Mouse look input for camera rotation around the player
-            mouseX += Input.GetAxis("Mouse X") * mouseSensitivity;
-            mouseY -= Input.GetAxis("Mouse Y") * mouseSensitivity;
-            mouseY = Mathf.Clamp(mouseY, -30f, 60f); // Limit vertical rotation to prevent the camera from flipping
-
+            _mouseX += Input.GetAxis("Mouse X") * mouseSensitivity;
+            _mouseY -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+            _mouseY = Mathf.Clamp(_mouseY, -30f, 60f); // Limit vertical rotation to prevent the camera from flipping
+            
             // Rotate the camera around the player
-            playerCamera.transform.localRotation = Quaternion.Euler(mouseY, 0f, 0f);
-            transform.rotation = Quaternion.Euler(0f, mouseX, 0f);
+            _playerCamera.transform.localRotation = Quaternion.Euler(_mouseY, 0f, 0f);
+            transform.rotation = Quaternion.Euler(0f, _mouseX, 0f);
         }
         #endregion
         #region Jumping
@@ -118,49 +108,38 @@ public class CPlayerMovement : MonoBehaviour
         if (_canMove)
         {
             // Move the player
-            PerformMovement(movement);
+            PerformMovement(_movement);
         }
-    }
-
-    void LateUpdate()
-    {
-        if(_canRotate)
-            CameraRotation();
     }
 
     void PerformMovement(Vector3 move)
     {
-        rb.MovePosition(rb.position + transform.TransformDirection(move) * Time.fixedDeltaTime);
+        _rb.MovePosition(_rb.position + transform.TransformDirection(move) * Time.fixedDeltaTime);
     }
 
     void Jump()
     {
-        if (IsGrounded() || jumpCount < maxJumps)
+        if (IsGrounded() || _jumpCount < maxJumps)
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            jumpCount++;
+            _rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            _jumpCount++;
         }
     }
 
     bool IsGrounded()
     {
         // Check if the player is on the ground using a sphere cast
-        return Physics.CheckSphere(transform.position + Vector3.down * distanceToGround, 0.3f, groundLayer);
+        return Physics.CheckSphere(transform.position + Vector3.down * _distanceToGround, 0.3f, groundLayer);
     }
 
     void ZoomCamera(float scrollInput)
     {
-        float newFOV = playerCamera.fieldOfView - scrollInput * zoomSensitivity;
+        float newFOV = _playerCamera.fieldOfView - scrollInput * zoomSensitivity;
         newFOV = Mathf.Clamp(newFOV, minZoom, maxZoom);
         //playerCamera.fieldOfView = Mathf.Clamp(newFOV, minZoom, maxZoom);
 
         //for smoother zooming - Alden
-        playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, newFOV, Time.deltaTime * zoomSensitivity);
-    }
-
-    private void CameraRotation()
-    {
-        cameraFollowTarget.rotation = Quaternion.identity;
+        _playerCamera.fieldOfView = Mathf.Lerp(_playerCamera.fieldOfView, newFOV, Time.deltaTime * zoomSensitivity);
     }
 
     public void ToggleMovement()
