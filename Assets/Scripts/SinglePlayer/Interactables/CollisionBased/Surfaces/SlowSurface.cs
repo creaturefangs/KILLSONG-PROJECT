@@ -20,7 +20,6 @@ public class SlowSurface : Surface
     
     private void TogglePlayerSpeed(bool onSurface)
     {
-        // Always adjust both walk and sprint speeds regardless of the sprint state
         playerMovement.walkSpeed = onSurface ? originalPlayerWalkSpeed * 0.5f : originalPlayerWalkSpeed;
         playerMovement.sprintSpeed = onSurface ? originalPlayerSprintSpeed * 0.25f : originalPlayerSprintSpeed;
     }
