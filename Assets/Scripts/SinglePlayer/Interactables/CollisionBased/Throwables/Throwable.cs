@@ -36,13 +36,13 @@ public class Throwable : DamageInstigator
         GameObject detonationVFX = Instantiate(throwable.prefabDetonationVfx, transform.position, Quaternion.identity);
         
         onDetonation?.Invoke();
-        DestroyAfterTime(gameObject);
-        DestroyAfterTime(detonationVFX);
+        DestroyAfterTime(gameObject, throwable.postDetonationDestructionTime);
+        DestroyAfterTime(detonationVFX, throwable.postDetonationDestructionTime);
     }
 
-    private void DestroyAfterTime(GameObject goToDestroy)
+    public void DestroyAfterTime(GameObject goToDestroy, float timeToDestroy)
     {
-        StartCoroutine(DestroyRoutine(goToDestroy, throwable.postDetonationDestructionTime));
+        StartCoroutine(DestroyRoutine(goToDestroy, timeToDestroy));
     }
 
     private IEnumerator DestroyRoutine(GameObject goToDestroy, float timeToDestroy)

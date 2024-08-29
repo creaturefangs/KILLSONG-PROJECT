@@ -20,12 +20,6 @@ public class CPlayerHealth : MonoBehaviour, IDamageable
     
     public event Action OnDeath;
     
-
-    private void Start()
-    {
-        //Subscribe OnDeath to the Die Function
-        OnDeath += Die;
-    }
     public void TakeDamage(float amount)
     {
         if (currentHealth > 0)

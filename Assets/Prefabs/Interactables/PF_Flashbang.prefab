@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1014918725157437278
 RectTransform:
   m_ObjectHideFlags: 0
@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 1490246277674822843}
   - component: {fileID: 814283369765104133}
   - component: {fileID: 9104565896987116800}
+  - component: {fileID: 8158965754198271820}
   m_Layer: 0
   m_Name: PF_Flashbang
   m_TagString: Untagged
@@ -253,8 +254,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashLight: {fileID: 4899054132156021752}
-  flashDuration: 3
-  flashbangSFX: {fileID: 0}
+  maxFlashDuration: 1
+  maxFlashIntensity: 50
 --- !u!114 &9104565896987116800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +269,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashOverlay: {fileID: 8319018967562505515}
-  fadeDuration: 1
+  maxFadeDuration: 1
+  initialFlashOpacity: 0
+--- !u!114 &8158965754198271820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2193657473711582852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99eec51757b73e647814879133e62337, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageType: 0
+  isTrigger: 0
+  disableAfterOneUse: 1
+  canDamage: 1
+  triggerTagCheck: Player
+  damageAmount: 7
+  damageTickMultiplier: 1
+  damageEffect: {fileID: 0}
+  damageEffectDestructionDelay: 0.5
+  onDamageStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamageEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  throwable: {fileID: 11400000, guid: b4f401ccfc56fdb4f90dd2efcfd73638, type: 2}
+  onDetonation:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3651232263797165252}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  hasRandomDetonationTime: 1
+  enableDrawGizmosDebug: 1
+  flashbangCanvas: {fileID: 832444727903101687}
 --- !u!1 &3224827316465156928
 GameObject:
   m_ObjectHideFlags: 0

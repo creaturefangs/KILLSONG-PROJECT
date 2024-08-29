@@ -16,7 +16,7 @@ public class SO_Throwable : ScriptableObject
     [Tooltip("Maximum time it takes for this throwable to detonate after release")]
     public float maxDetonationTime;
 
-    [Tooltip("How far can objects be affected by this throwable before not being affected?")]
+    [Tooltip("How far away can objects be affected by this throwable before not being affected?")]
     [Range(2.0f, 7.5f)]
     public float effectRadius;
 
@@ -29,6 +29,6 @@ public class SO_Throwable : ScriptableObject
     public float detonationEffectTime;
 
     [Tooltip("Time it takes for this object to be destroyed after detonation")]
-    [Range(.01f, 1.0f)]
+    [Range(.01f, 5.0f)]
     public float postDetonationDestructionTime;
 }

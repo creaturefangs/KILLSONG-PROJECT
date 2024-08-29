@@ -31,11 +31,17 @@ public class PlayerUI : MonoBehaviour
             return;
         }
 
+        
+        //if the desired hold duration is less or = to 0, do not dispaly the interactionkeyimage
+        if (playerInteractableController.currentInteractableObject.interactableData.interactionHoldDuration <=
+            0) return;
+        
         // Show interaction UI elements
         interactionKeyImage.SetActive(true);
         interactionProgressImage.gameObject.SetActive(true);
 
         string displayText;
+        
         switch (eInteractionType)
         {
             case STRInteractables.EInteractionType.BasicInteraction:

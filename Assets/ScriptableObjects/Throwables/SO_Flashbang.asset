@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: SO_Flashbang
   m_EditorClassIdentifier: 
   throwableName: Flashbang
-  detonationVfx: {fileID: 0}
-  minDetonationTime: 0
-  maxDetonationTime: 0
-  projectileThrowRange: 0
-  detonationEffectTime: 0
+  prefabDetonationVfx: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}
+  minDetonationTime: 2
+  maxDetonationTime: 5
+  effectRadius: 4
+  projectileThrowRange: 15
+  detonationEffectTime: 3.11
+  postDetonationDestructionTime: 5
