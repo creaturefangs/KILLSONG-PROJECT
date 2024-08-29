@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e020bca37ae7b4594c185a12b71db9, type: 3}
+  m_Name: SO_Turret
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 11400000, guid: 1e4e1c47c6a6c024e9fda14b1b19cfd6, type: 2}
+  weaponName: TierOneTurret
+  weaponType: 2
+  maxRange: 50
+  maxMagazineAmmo: 30
+  startingMagazineAmmo: 30
+  maxReserveAmmo: 300
+  fireRate: 1
+  burstDelay: 1
+  burstCount: 2
+  fireSound: {fileID: 8300000, guid: 0cacd97b826ccf1449681bcbc233ae7a, type: 3}
+  reloadSound: {fileID: 0}
+  lockOnTime: 3
+  rotationSpeed: 50
+  visionAngle: 45
+  weaponIcon: {fileID: 0}
+  reloadTime: 2

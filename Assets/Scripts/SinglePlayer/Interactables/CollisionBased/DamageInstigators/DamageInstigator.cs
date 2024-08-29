@@ -21,6 +21,9 @@ public class DamageInstigator : MonoBehaviour
     private bool _inDamageArea;
     private Coroutine _damageCoroutine;
 
+    public GameObject damageEffect;
+    public float damageEffectDestructionDelay = .5f;
+    
     public UnityEvent onDamageStart;
     public UnityEvent onDamageEnd;
 
@@ -41,17 +44,27 @@ public class DamageInstigator : MonoBehaviour
                     damagable.TakeDamage(damageAmount);
                     break;
                 case DamageType.OverTime:
-                    if (_damageCoroutine == null)
-                    {
-                        _damageCoroutine = StartCoroutine(ApplyDamageOverTime(damagable));
-                    }
+                    _damageCoroutine ??= StartCoroutine(ApplyDamageOverTime(damagable));
                     break;
                 default:
                     damagable.TakeDamage(damageAmount);
                     break;
             }
-
+        
             onDamageStart?.Invoke();
+
+            //spawn damage effect at hit point
+            if (damageEffect != null)
+            {
+                if (Physics.Raycast(transform.position,
+                        (other.transform.position - transform.position).normalized,
+                        out RaycastHit hit,
+                        Mathf.Infinity))
+                {
+                    Instantiate(damageEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(damageEffect, damageEffectDestructionDelay);
+                }
+            }
         }
 
         if (disableAfterOneUse)
