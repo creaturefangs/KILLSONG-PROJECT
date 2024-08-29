@@ -9,7 +9,7 @@ public class SO_CollisionBasedIO : ScriptableObject
     [Tooltip("Type of interaction (e.g., click, hold) for this interactable")]
     public STRInteractables.EInteractionType interactionType;
 
-    [Tooltip("Duration the player must hold to interact (0 for instant interaction)")]
+    [Tooltip("Duration the player must hold to interact (0 for instant interaction and no UI popup)")]
     [Range(0, 5)] 
     public float interactionHoldDuration;
 }
