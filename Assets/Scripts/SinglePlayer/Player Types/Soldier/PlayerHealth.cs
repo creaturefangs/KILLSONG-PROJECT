@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PlayerHealth : MonoBehaviour, IDamagable
+public class PlayerHealth : MonoBehaviour, IDamageable
 {
     public float maxHealth = 100;
     public float currentHealth;
     public GameObject damageUI;
-    private int damageAmount = 25; // player takes 25 damage each time
     public GameObject deathScrn;
     public Text deathText;
     public string deathMessage = "[ VITALS OFFLINE ]";

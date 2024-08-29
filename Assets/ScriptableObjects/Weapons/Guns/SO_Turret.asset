@@ -16,16 +16,17 @@ MonoBehaviour:
   weaponName: TierOneTurret
   weaponType: 2
   maxRange: 50
-  maxMagazineAmmo: 30
-  startingMagazineAmmo: 30
+  maxMagazineAmmo: 60
+  startingMagazineAmmo: 60
   maxReserveAmmo: 300
-  fireRate: 1
-  burstDelay: 1
-  burstCount: 2
+  fireRate: 0.5
+  burstDelay: 0.1
+  burstCount: 3
   fireSound: {fileID: 8300000, guid: 0cacd97b826ccf1449681bcbc233ae7a, type: 3}
   reloadSound: {fileID: 0}
   lockOnTime: 3
   rotationSpeed: 50
   visionAngle: 45
+  muzzleFlashPrefab: {fileID: 1743301284569550, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
   weaponIcon: {fileID: 0}
-  reloadTime: 2
+  reloadTime: 3

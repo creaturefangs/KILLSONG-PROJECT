@@ -78,7 +78,7 @@ public class Turret : BaseWeapon
         Collider[] colliders = Physics.OverlapSphere(transform.position, detectionRange);
         foreach (Collider collider in colliders)
         {
-            if (collider.GetComponent<IDamagable>() != null)
+            if (collider.GetComponent<IDamageable>() != null)
             {
                 Vector3 directionToTarget = (collider.transform.position - transform.position).normalized;
                 float angleToTarget = Vector3.Angle(transform.forward, directionToTarget);
@@ -94,7 +94,7 @@ public class Turret : BaseWeapon
     }
 
 
-    public override bool HasLineOfSight(Transform potentialTarget)
+    protected override bool HasLineOfSight(Transform potentialTarget)
     {
         Vector3 directionToTarget = (potentialTarget.position - gunBarrel.position).normalized;
 

@@ -26,10 +26,10 @@ public class Throwable : DamageInstigator
 
         foreach (var hitCollider in hitColliders)
         {
-            IDamagable damagable = hitCollider.GetComponent<IDamagable>();
-            if (damagable != null)
+            IDamageable damageable = hitCollider.GetComponent<IDamageable>();
+            if (damageable != null)
             {
-                damagable.TakeDamage(damageAmount);
+                damageable.TakeDamage(damageAmount);
             }
         }
 

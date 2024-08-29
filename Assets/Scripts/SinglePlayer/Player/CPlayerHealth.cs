@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 
-public class CPlayerHealth : MonoBehaviour, IDamagable
+public class CPlayerHealth : MonoBehaviour, IDamageable
 {
     // Respawn Screen
     public GameObject playerDeath;
@@ -13,17 +13,13 @@ public class CPlayerHealth : MonoBehaviour, IDamagable
     public AudioSource audioSource;
     private float volume = 1.0f;
     private float volumeDeath = 0.2f;
-
-    // Current health value
+    
     public float currentHealth = 100;
-
-    // Maximum health value
+    
     public float maxHealth = 100;
-
-    // Event triggered when the object dies
+    
     public event Action OnDeath;
-
-    // Method to take damage
+    
 
     private void Start()
     {
@@ -58,8 +54,7 @@ public class CPlayerHealth : MonoBehaviour, IDamagable
             }
         }
     }
-
-    // Method to heal
+    
     public void Heal(float amount)
     {
         currentHealth += amount;
@@ -71,7 +66,7 @@ public class CPlayerHealth : MonoBehaviour, IDamagable
     private void Die()
     {
         // Trigger the death event
-        //OnDeath?.Invoke();
+        OnDeath?.Invoke();
 
         //Play death sound
         audioSource.PlayOneShot(deathSFX, volumeDeath);

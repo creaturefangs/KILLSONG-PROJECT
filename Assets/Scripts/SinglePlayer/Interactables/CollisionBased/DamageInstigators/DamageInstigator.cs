@@ -33,36 +33,42 @@ public class DamageInstigator : MonoBehaviour
 
         if (isTrigger && canDamage)
         {
-            IDamagable damagable = other.gameObject.GetComponent<IDamagable>();
+            //if the entered trigger implements the IDamagable interface.
+            IDamageable damageable = other.gameObject.GetComponent<IDamageable>();
             _inDamageArea = true;
 
-            if (damagable == null) return;
+            if (damageable == null) return;
 
             switch (damageType)
             {
                 case DamageType.Instant:
-                    damagable.TakeDamage(damageAmount);
+                    damageable.TakeDamage(damageAmount);
                     break;
                 case DamageType.OverTime:
-                    _damageCoroutine ??= StartCoroutine(ApplyDamageOverTime(damagable));
+                    _damageCoroutine ??= StartCoroutine(ApplyDamageOverTime(damageable));
                     break;
                 default:
-                    damagable.TakeDamage(damageAmount);
+                    damageable.TakeDamage(damageAmount);
                     break;
             }
-        
+
             onDamageStart?.Invoke();
 
             //spawn damage effect at hit point
             if (damageEffect != null)
             {
-                if (Physics.Raycast(transform.position,
+                if (Physics.Raycast(
+                        transform.position,
                         (other.transform.position - transform.position).normalized,
-                        out RaycastHit hit,
-                        Mathf.Infinity))
+                        out RaycastHit hitInfo,
+                        15.0f))
                 {
-                    Instantiate(damageEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                    Destroy(damageEffect, damageEffectDestructionDelay);
+                    GameObject spawnedEffect =
+                        Instantiate(
+                            damageEffect,
+                            hitInfo.point,
+                            Quaternion.LookRotation(hitInfo.normal));
+                    Destroy(spawnedEffect, damageEffectDestructionDelay);
                 }
             }
         }
@@ -73,11 +79,12 @@ public class DamageInstigator : MonoBehaviour
         }
     }
 
-    private IEnumerator ApplyDamageOverTime(IDamagable damagable)
+
+    private IEnumerator ApplyDamageOverTime(IDamageable damageable)
     {
         while (_inDamageArea)
         {
-            damagable.TakeDamageOverTime(damageAmount, damageTickMultiplier);
+            damageable.TakeDamageOverTime(damageAmount, damageTickMultiplier);
             yield return new WaitForSeconds(1.0f / damageTickMultiplier);
         }
     }

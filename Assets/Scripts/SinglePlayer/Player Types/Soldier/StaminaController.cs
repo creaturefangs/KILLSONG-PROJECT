@@ -29,7 +29,7 @@ public class StaminaController : MonoBehaviour
     private bool draining = false;
     private bool moving = false;
 
-    private bool godMode = false;
+    //private bool godMode = false;
 
     private void Start()
     {

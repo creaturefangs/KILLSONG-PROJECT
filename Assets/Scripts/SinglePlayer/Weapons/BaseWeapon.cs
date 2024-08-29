@@ -116,7 +116,7 @@ public class BaseWeapon : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, detectionRange);
         foreach (Collider collider in colliders)
         {
-            if (collider.GetComponent<IDamagable>() != null)
+            if (collider.GetComponent<IDamageable>() != null)
             {
                 Vector3 directionToTarget = (collider.transform.position - transform.position).normalized;
                 float angleToTarget = Vector3.Angle(transform.forward, directionToTarget);
@@ -130,7 +130,7 @@ public class BaseWeapon : MonoBehaviour
         }
     }
 
-    public bool IsTargetInVisionCone()
+    protected virtual bool IsTargetInVisionCone()
     {
         if (target == null) return false;
 
@@ -140,7 +140,7 @@ public class BaseWeapon : MonoBehaviour
         return angleToTarget < visionAngle / 2 && Vector3.Distance(transform.position, target.position) <= detectionRange && HasLineOfSight(target);
     }
 
-    public virtual bool HasLineOfSight(Transform potentialTarget)
+    protected virtual bool HasLineOfSight(Transform potentialTarget)
     {
         Vector3 directionToTarget = (potentialTarget.position - gunBarrel.position).normalized;
 
@@ -152,7 +152,7 @@ public class BaseWeapon : MonoBehaviour
         return false;
     }
 
-    public virtual void Fire()
+    public void Fire()
     {
         if (isReloading || isFiring || !isLockedOn)
             return;
@@ -177,9 +177,8 @@ public class BaseWeapon : MonoBehaviour
                 break;
         }
     }
-
-
-    protected virtual void FireSingleShot()
+    
+    public void FireSingleShot()
     {
         if (currentMagazineAmmo > 0)
         {
@@ -201,8 +200,6 @@ public class BaseWeapon : MonoBehaviour
         }
     }
 
-
-
     private void FireProjectile()
     {
         GameObject newBullet = Instantiate(weaponData.bullet.bulletPrefab, gunBarrel.position, gunBarrel.rotation);
@@ -210,7 +207,7 @@ public class BaseWeapon : MonoBehaviour
         rb.velocity = (target.position - gunBarrel.position).normalized * weaponData.bullet.bulletSpeed;
     }
 
-    protected virtual IEnumerator FireBurst()
+    private IEnumerator FireBurst()
     {
         isFiring = true;
         for (int i = 0; i < weaponData.burstCount; i++)
@@ -227,7 +224,7 @@ public class BaseWeapon : MonoBehaviour
         isFiring = false;
     }
 
-    protected virtual IEnumerator FireAutomatic()
+    private IEnumerator FireAutomatic()
     {
         isFiring = true;
         while (currentMagazineAmmo > 0)
@@ -252,7 +249,7 @@ public class BaseWeapon : MonoBehaviour
         }
     }
 
-    public virtual IEnumerator Reload()
+    private IEnumerator Reload()
     {
         if (isReloading) yield break;
 
