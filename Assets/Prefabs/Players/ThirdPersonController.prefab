@@ -10678,7 +10678,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5103735572812897283}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -13427,8 +13427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86605f7eaa1a46d46b0028039ca1e7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementType: 0
-  speed: 5
+  walkSpeed: 5
   sprintSpeed: 10
   jumpForce: 5
   mouseSensitivity: 1
@@ -13439,7 +13438,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
-  cameraFollowTarget: {fileID: 3943032829495453817}
+  isSprinting: 0
 --- !u!114 &4692457693392319395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16758,6 +16757,6 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -254063368962556642, guid: d22399e85b6bbab45b99b67ef2a14672, type: 3}
