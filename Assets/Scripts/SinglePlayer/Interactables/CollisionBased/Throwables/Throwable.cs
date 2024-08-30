@@ -2,16 +2,25 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
+
 public class Throwable : DamageInstigator
 {
     public SO_Throwable throwable;
     public UnityEvent onDetonation;
     private float _detonationTime;
     public bool hasRandomDetonationTime;
-
+    public bool playCollisionSounds = true;
     public bool enableDrawGizmosDebug = true;
+    public bool hasPrimeSfx = true;
+    
     private void Start()
     {
+        if (hasPrimeSfx)
+        {
+            EnvironmentalSoundController.Instance.PlaySoundAtLocation(throwable.primeSFX, 1.0f,
+                transform.position);
+        }
+        
         //get a random detonation time if hasRandomDetonationTime is true, otherwise default to the maxDetonationTime
         _detonationTime = hasRandomDetonationTime 
             ? Random.Range(throwable.minDetonationTime, throwable.maxDetonationTime) 
@@ -20,6 +29,15 @@ public class Throwable : DamageInstigator
         Invoke(nameof(Detonate), _detonationTime);
     }
 
+    public void OnCollisionEnter(Collision other)
+    {
+        if (!playCollisionSounds) return;
+
+        //Play a random collision sound
+        EnvironmentalSoundController.Instance.PlayRandomSoundAtLocation(throwable.collisionSFX, 1.0f,
+            transform.position);
+    }
+    
     public virtual void Detonate()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, throwable.effectRadius);

@@ -91,4 +91,10 @@ public class PlayerInteractableController : MonoBehaviour
         playerUI.interactionKeyImage.SetActive(!playerUI.interactionKeyImage.activeSelf);
         playerUI.interactionProgressImage.gameObject.SetActive(!playerUI.interactionProgressImage.gameObject.activeSelf);
     }
+
+    public void ResetHoldTimer()
+    {
+        _currentInteractionHoldTime = 0f;
+        playerUI.interactionProgressImage.fillAmount = 0f;
+    }
 }

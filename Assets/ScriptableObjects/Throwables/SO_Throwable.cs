@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [CreateAssetMenu(menuName = "Throwable", order = 3)]
 public class SO_Throwable : ScriptableObject
@@ -29,6 +28,12 @@ public class SO_Throwable : ScriptableObject
     public float detonationEffectTime;
 
     [Tooltip("Time it takes for this object to be destroyed after detonation")]
-    [Range(.01f, 5.0f)]
+    [Range(.01f, 10.0f)]
     public float postDetonationDestructionTime;
+
+    [Tooltip("What sound effect should play when the throwable is primed?")]
+    public AudioClip primeSFX; 
+    
+    [Tooltip("What sounds should play when this object collidies with another object?")]
+    public AudioClip[] collisionSFX;
 }

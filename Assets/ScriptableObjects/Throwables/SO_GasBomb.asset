@@ -13,8 +13,15 @@ MonoBehaviour:
   m_Name: SO_GasBomb
   m_EditorClassIdentifier: 
   throwableName: Gas Bomb
-  detonationVfx: {fileID: 0}
-  minDetonationTime: 0
-  maxDetonationTime: 0
-  projectileThrowRange: 0
-  detonationEffectTime: 0
+  prefabDetonationVfx: {fileID: 1547757601392324, guid: 6f672a31584a6a748912a49c1dce2f0c, type: 3}
+  minDetonationTime: 3
+  maxDetonationTime: 5
+  effectRadius: 4
+  projectileThrowRange: 10
+  detonationEffectTime: 5
+  postDetonationDestructionTime: 8
+  primeSFX: {fileID: 8300000, guid: 604fcdd22aaad174482b670c5de7168f, type: 3}
+  collisionSFX:
+  - {fileID: 8300000, guid: 53d1cd350f5562349964b534b0c14bd3, type: 3}
+  - {fileID: 8300000, guid: 910f8ce1deee76143a47ec79853705fe, type: 3}
+  - {fileID: 8300000, guid: ecfaccf0d6100164db3e240ef428cd01, type: 3}

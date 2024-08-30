@@ -20,3 +20,8 @@ MonoBehaviour:
   projectileThrowRange: 15
   detonationEffectTime: 3.11
   postDetonationDestructionTime: 5
+  primeSFX: {fileID: 8300000, guid: 604fcdd22aaad174482b670c5de7168f, type: 3}
+  collisionSFX:
+  - {fileID: 8300000, guid: 53d1cd350f5562349964b534b0c14bd3, type: 3}
+  - {fileID: 8300000, guid: 910f8ce1deee76143a47ec79853705fe, type: 3}
+  - {fileID: 8300000, guid: ecfaccf0d6100164db3e240ef428cd01, type: 3}

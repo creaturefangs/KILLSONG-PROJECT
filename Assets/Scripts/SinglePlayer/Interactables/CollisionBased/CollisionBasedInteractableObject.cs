@@ -26,24 +26,27 @@ public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
     public PlayerInventory playerInventory;
     [HideInInspector]
     public CPlayerMovement playerMovement; 
-    private PlayerUI _playerUI;
-    
+    [HideInInspector]
+    public PlayerUI playerUI;
+    [HideInInspector]
+    public PlayerInteractableController playerInteractableController;
     public void Awake()
     {
         player = GameObject.FindWithTag("Player");
-        playerInventory = FindObjectOfType<PlayerInventory>();
-        playerMovement = FindObjectOfType<CPlayerMovement>();
-        _playerUI = FindObjectOfType<PlayerUI>();
+        playerInventory = player.GetComponent<PlayerInventory>();
+        playerMovement = player.GetComponent<CPlayerMovement>();
+        playerInteractableController = player.GetComponent<PlayerInteractableController>();
+        playerUI = player.GetComponentInChildren<PlayerUI>();
     }
     public void OnTriggerEnter(Collider other)
     {
         if(!other.CompareTag(triggerObjectTagCheck)) return;
         
         canInteract = true;
-        player.GetComponent<PlayerInteractableController>().currentInteractableObject = this;
+        playerInteractableController.currentInteractableObject = this;
        
         //Display interaction in UI
-        _playerUI.DisplayInteractionUI(KeyCode.E, interactableData.interactionType, interactableData.interactableStruct);
+        playerUI.DisplayInteractionUI(KeyCode.E, interactableData.interactionType, interactableData.interactableStruct);
     }
 
     public void OnTriggerExit(Collider other)
@@ -51,11 +54,11 @@ public class CollisionBasedInteractableObject : MonoBehaviour, IInteractable
         if(!other.CompareTag(triggerObjectTagCheck)) return;
 
         canInteract = false;
-        player.GetComponent<PlayerInteractableController>().currentInteractableObject = null;
-
-        //Clear interaction UI
-        _playerUI.ClearInteractionDisplay();
+        playerInteractableController.currentInteractableObject = null;
+        playerInteractableController.ResetHoldTimer();
         
+        //Clear interaction UI
+        playerUI.ClearInteractionDisplay();
         onEndInteractionEvent?.Invoke();
     }
 
