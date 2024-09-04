@@ -48,6 +48,7 @@ MonoBehaviour:
   - {fileID: -6827688252092750906}
   - {fileID: 5494262168544066852}
   - {fileID: 6009496103335904194}
+  - {fileID: 9031782130409062087}
 --- !u!114 &2650270371739438692
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1550,3 +1551,40 @@ MonoBehaviour:
   opacity:
     overrideState: 0
     value: 1
+--- !u!114 &9031782130409062087
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf97589ac645e6044bfa1ff7ccbaa9e8, type: 3}
+  m_Name: Outlines
+  m_EditorClassIdentifier: 
+  active: 0
+  enabled:
+    overrideState: 1
+    value: 1
+  DepthThreshold:
+    overrideState: 1
+    value: 0.05
+  NormalThreshold:
+    overrideState: 1
+    value: 0.5
+  EdgeWidth:
+    overrideState: 1
+    value: 0.001
+  FresnelEdgePower:
+    overrideState: 1
+    value: 1
+  GrazingAngleMaskPower:
+    overrideState: 1
+    value: 1
+  GrazingAngleMaskHardness:
+    overrideState: 1
+    value: 1
+  EdgeColor:
+    overrideState: 1
+    value: {r: 0, g: 0, b: 0, a: 1}
