@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 3997811200681101809}
   - component: {fileID: 5493671256397953024}
   m_Layer: 0
-  m_Name: PF_RagePickup
+  m_Name: PF_HealthPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
